@@ -1,0 +1,63 @@
+include ../title/title
+
+
+-
+  const servicesList = [
+      {
+        img: 'cargo-search.png',
+        w: '59',
+        h: '52',
+        content: 'Поиск товара, производителей в Китае',
+      },
+      {
+        img: 'fabrica.png',
+        w: '52',
+        h: '52',
+        content: 'Проверка товаров и фабрик в Китае',
+      },
+      {
+        img: 'containers.png',
+        w: '50',
+        h: '45',
+        content: 'Доставка образцов',
+      },
+      {
+        img: 'cargo.png',
+        w: '58',
+        h: '56',
+        content: 'Карго-доставка товаров из Китая',
+      },
+      {
+        img: 'customs-registration.png',
+        w: '59',
+        h: '60',
+        content: 'Таможенное оформление в Беларуси',
+      },
+      {
+        img: 'certificate.png',
+        w: '62',
+        h: '58',
+        content: 'Сертификация продукции в Беларуси',
+      },
+      {
+        img: 'money.png',
+        w: '63',
+        h: '67',
+        content: 'Перевод денег в Китай',
+      },
+      {
+        img: 'translate.png',
+        w: '57',
+        h: '64',
+        content: 'Переводчик с китайского',
+      },
+    ]
+
+section.services.container
+  +title('Наши услуги', 'section').services__title
+  ul.services__list
+    each service in servicesList
+      li.services__service-item
+        div.services__service-img
+          img(src="img/icons/" + service.img width= service.w height= service.h alt="")
+        h3!= service.content

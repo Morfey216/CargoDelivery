@@ -1,0 +1,35 @@
+.services {
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.services__title {
+  margin-bottom: 85px;
+}
+
+.services__list {
+  @include list-reset;
+  @include ubuntu(17, 24, 400);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.services__service-item {
+  // width: 535px;
+  width: 450px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 40px;
+
+  h3 {
+    font-size: 16px;
+    color: $title-color;
+    text-transform: uppercase;
+  }
+}
+
+.services__service-img {
+  width: 80px;
+}

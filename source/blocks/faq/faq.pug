@@ -1,0 +1,38 @@
+include ../title/title
+
+-
+  const questionsList = [
+      {
+        label: '',
+        content: 'Здравствуйте, скажите, пожалуйста, какой срок доставки?',
+        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas mi a turpis consequat dignissim. Quisque eros eros, semper at pretium sed, fringilla sit amet ipsum. Fusce in nunc fermentum tortor tincidunt fringilla. Ut ut nulla quis erat gravida dictum vel vel metus. Cras placerat dictum eleifend.'
+      },
+      {
+        label: '',
+        content: 'Добрый день! В чем принципиальное отличие вашей фирмы от конкурентов?',
+        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas mi a turpis consequat dignissim. Quisque eros eros, semper at pretium sed, fringilla sit amet ipsum. Fusce in nunc fermentum tortor tincidunt fringilla. Ut ut nulla quis erat gravida dictum vel vel metus. Cras placerat dictum eleifend.'
+      },
+      {
+        label: '',
+        content: 'Проконсультируйте пожалуйста, по стоимости услуг и способам оплаты?',
+        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas mi a turpis consequat dignissim. Quisque eros eros, semper at pretium sed, fringilla sit amet ipsum. Fusce in nunc fermentum tortor tincidunt fringilla. Ut ut nulla quis erat gravida dictum vel vel metus. Cras placerat dictum eleifend.'
+      },
+      {
+        label: '',
+        content: 'Возможно ли доставка в районные центры?',
+        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas mi a turpis consequat dignissim. Quisque eros eros, semper at pretium sed, fringilla sit amet ipsum. Fusce in nunc fermentum tortor tincidunt fringilla. Ut ut nulla quis erat gravida dictum vel vel metus. Cras placerat dictum eleifend.'
+      },
+    ]
+
+section.faq
+  div.faq__wrapper
+    +title('Часто задаваемые вопросы', 'section').faq__title
+    ul.faq__questions
+      each question in questionsList
+        li.faq__question.js-faq-control
+          div.faq__question-title
+            span #{question.label}
+            p!= question.content
+          div.faq__answer
+            p!= question.answer
+    a(href="#").faq__ask-question-link.js-ask-question-open Задать вопрос

@@ -1,0 +1,19 @@
+.semantic {
+  min-height: 622px;
+  background-color: $blue;
+  background-image: url(../img/warranty.jpg);
+  background-repeat: no-repeat;
+  background-position-x: 0%;
+  background-size: 50%;
+}
+
+.semantic__content {
+  width: 510px;
+  margin-left: auto;
+  padding-top: 160px;
+}
+
+.semantic__text {
+  @include ubuntu(13, 24, 400);
+  color: $white;
+}

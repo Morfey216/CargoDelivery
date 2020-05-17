@@ -1,0 +1,66 @@
+include ../svg/svg
+include ../link/link
+include ../button/button
+include ../contacts-phone/contacts-phone
+include ../main-nav/main-nav
+
+mixin header
+  header.header
+    div.header__secondary.container
+      div.header__towns-container
+        div.header__towns-wrap
+          img.header__towns-pin(src="img/icons/marker.svg" width="12" height="18" alt="")
+          span Ваш город
+          +link('Москва?', '#', 'gray').header__towns-link
+          //- select.header__stores
+      div.header__schedule-wrap
+        p.header__schedule Пн. – Пт.: с 10:00 до 19:00
+        a.header__email(href="mailto:window@winfin.ru") window@winfin.ru
+      div.header__orders-wrap
+        a.header__calculation(href="#")
+          img(src="img/icons/resize.png" width="34" height="34" alt="#").header__calculation-img
+          span.header__calculation-desc Выслать размеры на рассчет
+        a.header__gager(href="#").js-gager-open
+          img(src="img/icons/measuring-tape.png" width="33" height="25" alt="#").header__gager-img
+          span.header__gager-desc Вызвать замерщика бесплатно
+      div.header__social-wrap
+        h2.visually-hidden Мы в соцсетях
+        ul.header__social-list
+          li.header__social-item
+            a(href="#").header__social-link
+              img(src="img/icons/facebook-white.png" width="8" height="14" alt="Логотип Facebook").header__icon
+              span.visually-hidden Подписывайтесь к нам на Facebook
+          li.header__social-item
+            a(href="#").header__social-link
+              img(src="img/icons/odnoklassniki-white.png" width="11" height="17" alt="Логотип Одноклассники").header__icon
+              span.visually-hidden Подписывайтесь к нам на Одноклассниках
+          li.header__social-item
+            a(href="#").header__social-link
+              img(src="img/icons/instagram-white.png" width="19" height="19" alt="Логотип Instagram").header__icon
+              span.visually-hidden Подписывайтесь к нам на Instagram
+    div.header__primary-container
+      div.header__primary.container
+        div.header__logo
+          a.header__logo-link(href="#")
+            img.header__logo-img(src="img/logos/logo-header.png" width="262" height="79" alt="Логотип компании WINFIN")
+          div.header__logo-description
+            p.header__logo-description-text Деревянные окна "под ключ"
+              span производство, поставка и установка по России
+            div.header__technology
+              img(src="img/icons/fin-flag.png" width="38" height="23" alt="Флаг Финляндии").header__technology-img
+              p.header__technology-description Finland Technology
+        div.header__contacts
+          +contacts-phone('smartphone.png', 18, 32).header__contacts-phone
+          +button("Заказать звонок", "orange")(aria-label='Заказать звонок' type="button").header__call-request.js-call-request-open
+    div.header__main-nav-container.container
+        div.header__main-nav-wrap
+          +main-nav.header__main-nav
+          +button("Калькулятор", "green")(aria-label='Калькулятор' type="button").header__calculator
+
+
+    button(type="button").header__toggle
+      span.visually-hidden Открыть/закрыть
+      +svg('burger')(width="32" height="23").header__toggle-svg-open
+      +svg('cross')(width="23" height="23").header__toggle-svg-close
+    div.header__dropdown
+    div.header__overlay
