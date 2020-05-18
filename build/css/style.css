@@ -2457,7 +2457,6 @@ button.swiper-pagination-bullet {
   width: 80px; }
 
 .semantic {
-  min-height: 622px;
   background-color: #709dca;
   background-image: url(../img/warranty.jpg);
   background-repeat: no-repeat;
@@ -2467,7 +2466,8 @@ button.swiper-pagination-bullet {
 .semantic__content {
   width: 510px;
   margin-left: auto;
-  padding-top: 160px; }
+  padding-top: 160px;
+  padding-bottom: 160px; }
 
 .semantic__text {
   font-family: "Ubuntu", "Arial", sans-serif;
@@ -2475,6 +2475,71 @@ button.swiper-pagination-bullet {
   line-height: 24px;
   font-weight: 400;
   color: #ffffff; }
+
+.reviews {
+  padding-top: 160px;
+  padding-bottom: 160px;
+  background-color: #709dca; }
+
+.reviews__title {
+  text-align: center; }
+
+.reviews__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 55px; }
+
+.reviews__review {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 565px;
+  min-height: 290px;
+  margin-bottom: 25px;
+  padding: 45px 35px;
+  background-color: #ffffff; }
+
+.reviews__review-avatar-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 128px;
+  height: 128px;
+  margin-right: 30px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
+.reviews__review-avatar {
+  border-radius: 50%; }
+
+.reviews__review-content p {
+  font-family: "Ubuntu", "Arial", sans-serif;
+  font-size: 13px;
+  line-height: 22px;
+  font-weight: 400;
+  padding: 0;
+  color: #7b7b7b; }
+
+.reviews__review-author {
+  margin-top: 25px; }
+  .reviews__review-author span {
+    text-transform: uppercase;
+    margin-right: 10px; }
+
+.reviews__author-name {
+  color: #f6772c; }
 
 .faq {
   padding-top: 115px;

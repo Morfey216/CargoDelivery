@@ -1,0 +1,43 @@
+include ../title/title
+
+-
+  const reviewsList = [
+      {
+        avatar: 'w-man.png',
+        content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make. a type specimen book, but also the leap into electronic typesetting, remaining essentially unchanged.',
+        author: 'Darwin Michle',
+        position: 'Project Manager'
+      },
+      {
+        avatar: 'unnamed-w.png',
+        content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make. a type specimen book, but also the leap into electronic typesetting, remaining essentially unchanged.',
+        author: 'Darwin Michle',
+        position: 'Manager'
+      },
+      {
+        avatar: 'unnamed-w.png',
+        content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make. a type specimen book, but also the leap into electronic typesetting, remaining essentially unchanged.',
+        author: 'Darwin Michle',
+        position: 'Creative Directior'
+      },
+      {
+        avatar: 'w-man.png',
+        content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make. a type specimen book.',
+        author: 'Darwin Michle',
+        position: 'Project Manager'
+      },
+    ]
+
+section.reviews
+  +title('Отзывы', 'white').reviews__title
+  div.container
+    div.reviews__list
+      each review in reviewsList
+        div.reviews__review
+          div.reviews__review-avatar-container
+            img(src="img/avatar/" + review.avatar width="128" height="128" alt="Аватар").reviews__review-avatar
+          div.reviews__review-content
+            p!= review.content
+            div.reviews__review-author
+              span.reviews__author-name #{review.author}
+              span.reviews__author-position #{review.position}

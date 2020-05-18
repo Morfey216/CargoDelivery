@@ -86,8 +86,8 @@ gulp.task('copy-build', () => gulp.src([
 
 gulp.task('images', () => gulp.src(['source/img/**/*.{png,jpg,svg}', '!source/img/sprite/*.svg'])
   .pipe(imagemin([
-    imagemin.optipng({ optimizationLevel: 3 }),
-    imagemin.jpegtran({ progressive: true }),
+    // imagemin.optipng({ optimizationLevel: 3 }),
+    // imagemin.jpegtran({ progressive: true }),
     imagemin.svgo({
       plugins: [
         { removeViewBox: false },
