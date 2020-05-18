@@ -2476,8 +2476,62 @@ button.swiper-pagination-bullet {
   font-weight: 400;
   color: #ffffff; }
 
+.delivery {
+  padding-top: 70px;
+  padding-bottom: 100px;
+  background-color: #e7edf3; }
+
+.delivery__title {
+  margin-bottom: 85px; }
+
+.delivery__list {
+  padding: 0;
+  list-style: none;
+  font-family: "Ubuntu", "Arial", sans-serif;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+.delivery__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 260px;
+  margin-bottom: 100px; }
+
+.delivery__img {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
 .reviews {
-  padding-top: 160px;
+  padding-top: 70px;
   padding-bottom: 160px;
   background-color: #709dca; }
 

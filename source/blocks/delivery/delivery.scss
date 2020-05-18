@@ -1,0 +1,38 @@
+.delivery {
+  padding-top: 70px;
+  padding-bottom: 100px;
+  background-color: $light-blue;
+}
+
+.delivery__title {
+  margin-bottom: 85px;
+}
+
+.delivery__list {
+  @include list-reset;
+  @include ubuntu(17, 24, 400);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.delivery__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 260px;
+  margin-bottom: 100px;
+}
+
+.delivery__img {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

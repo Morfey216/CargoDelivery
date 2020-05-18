@@ -1,0 +1,57 @@
+include ../title/title
+
+-
+  const deliveryList = [
+      {
+        img: 'airplane.png',
+        w: '61',
+        h: '61',
+        content: 'Авиадоставка грузов',
+      },
+      {
+        img: 'car.png',
+        w: '49',
+        h: '39',
+        content: 'Автодоставка грузов',
+      },
+      {
+        img: 'train.png',
+        w: '53',
+        h: '54',
+        content: 'ЖД доставка грузов',
+      },
+      {
+        img: 'ship.png',
+        w: '60',
+        h: '52',
+        content: 'Доставка морем',
+      },
+      {
+        img: 'cargo.png',
+        w: '58',
+        h: '56',
+        content: 'Контейнерные перевозки',
+      },
+      {
+        img: 'containers.png',
+        w: '50',
+        h: '45',
+        content: 'Сборные грузы',
+      },
+      {
+        img: 'fast-delivery.png',
+        w: '72',
+        h: '73',
+        content: 'Экспресс доставка грузов',
+      },
+    ]
+
+section.delivery
+  +title('Варианты доставки', 'section-nodecor').delivery__title
+  ul.delivery__list.container
+    each delivery in deliveryList
+      li.delivery__item
+        div.delivery__img
+          img(src="img/icons/" + delivery.img width= delivery.w height= delivery.h alt="")
+        h3!= delivery.content
+
