@@ -10,7 +10,7 @@ include ../blocks/head/head
 //- include ../blocks/map/map
 include ../blocks/page-footer/page-footer
 include ../blocks/overlay/overlay
-//- include ../blocks/ask-question-modal/ask-question-modal
+include ../blocks/ask-question-modal/ask-question-modal
 //- include ../blocks/gager-modal/gager-modal
 //- include ../blocks/call-request-modal/call-request-modal
 //- include ../blocks/discount-modal/discount-modal
@@ -24,6 +24,7 @@ html(lang='ru')
     main
       h1.visually-hidden Доставка товаров из Китая
 
+      include ../blocks/offer/offer
       include ../blocks/services/services
       include ../blocks/semantic/semantic
       include ../blocks/delivery/delivery
@@ -35,7 +36,7 @@ html(lang='ru')
 
       //- +feedback-contacts
     +overlay.js-modal-overlay
-    //- +ask-question-modal
+    +ask-question-modal
     //- +gager-modal
     //- +call-request-modal
     //- +discount-modal

@@ -1,0 +1,19 @@
+include ../svg/svg
+include ../button/button
+include ../link/link
+include ../title/title
+include ../form-input/form-input
+include ../form-textarea/form-textarea
+
+section.feedback-form
+  +title('Обратная связь', 'section').feedback-form__title
+  form(action="#" method="post").feedback-form__form.js-fbf
+    +form-input({label: 'Введите имя', error: 'Введите имя',}).feedback-form__input.js-fbf-validate.js-fbf-name#name
+    +form-input({label: '+7 ( _ _ _ ) _ _ _ – _ _ – _ _', error: 'Неверный номер',}).feedback-form__input.js-fbf-validate.js-fbf-phone#phone
+    +form-textarea({label: 'Текст сообщения', error: 'Напишите сообщение',}).feedback-form__input.feedback-form__input--textarea.js-fbf-validate#message
+    footer.feedback-form__footer
+      +button('Отправить', 'orange')(type="submit").feedback-form__submit.js-fbf-submit
+      p.feedback-form__note
+        | Нажимая &laquo;Отправить&raquo;, вы&nbsp;даете согласие на&nbsp;обработку
+        |
+        a(href="#") персональных&nbsp;данных

@@ -7,10 +7,10 @@
   text-transform: uppercase;
   border: none;
   outline: none;
-  border-radius: 10px;
+  border-radius: 2px;
 
   @include ubuntu(16, 18, 700);
-  padding: 6px 5px;
+  padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
 

@@ -1,0 +1,56 @@
+.offer {
+  color: $white;
+  background-color: $blue;
+  background-image: url("../img/train-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid $blue;
+}
+
+.offer__header {
+  margin-top: 95px;
+}
+
+.offer__title {
+  font-size: 60px;
+  line-height: 72px;
+  text-align: center;
+}
+
+.offer__subtitle {
+  @include ubuntu(36, 40, 500);
+  color: $white;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include tablet-max {
+    @include ubuntu(24, 36, 500);
+  }
+
+  @include mobile-max {
+    @include ubuntu(18, 25, 500);
+  }
+}
+
+.offer__content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 50px;
+  margin-bottom: 75px;
+}
+
+.offer__description {
+  @include ubuntu(30, 36, 400);
+  width: 650px;
+  margin-bottom: 25px;
+}
+
+.offer__contact-form {
+  width: 280px;
+}
+
+.offer__form-submit-button {
+  width: 100%;
+}
