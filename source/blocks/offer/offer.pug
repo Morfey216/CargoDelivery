@@ -2,13 +2,13 @@ include ../title/title
 include ../form-input/form-input
 include ../button/button
 
-section.offer
+section.offer#offer
   div.container
     div.offer__header
-      +title('Поставки из Китая', 'white').offer__title
-      p.offer__subtitle "Lorem Ipsum is simply"
+      +title('Доставка товара из Китая', 'white').offer__title
+      p.offer__subtitle!= "Развивай свой бизнес вместе с СВН групп! <br>Мы поможем сэкономить Ваши деньги!"
     div.offer__content
-      p.offer__description "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer."
+      p.offer__description Мы предлагаем комплексный сервис: поиск, проверка и доставка товаров оптом с фабрик Китая до вашего склада. Производство под заказ.
       form.offer__contact-form.js-ocf(action="#" method="post")
         +form-input({label: 'Ваше имя', error: 'Введите имя',}, 'marker', {img: 'name-icon.png', w: '13', h: '15'})(type="text").offer__form-input.js-ocf-name#ocf-name
         +form-input({label: 'Ваша почта', error: 'Введите E-mail',}, 'marker', {img: 'email-icon.png', w: '16', h: '13'})(type="email").offer__form-input.js-ocf-email#ocf-email

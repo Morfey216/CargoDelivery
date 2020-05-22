@@ -1,10 +1,9 @@
 .semantic {
   // max-height: 622px;
   background-color: $blue;
-  background-image: url(../img/warranty.jpg);
+  background-image: url("../img/warranty.jpg"), linear-gradient(to top, $blue, $blue);
   background-repeat: no-repeat;
-  background-position-x: 0%;
-  background-size: 50%;
+  background-size: auto 100%, 50%;
 }
 
 .semantic__content {
@@ -12,6 +11,10 @@
   margin-left: auto;
   padding-top: 160px;
   padding-bottom: 160px;
+
+  @include mobile-max {
+    width: auto;
+  }
 }
 
 .semantic__text {

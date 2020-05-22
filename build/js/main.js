@@ -1291,6 +1291,43 @@
     }
   };
 
+  /* global Cleave */
+  var callRequestModal = (function () {
+    var callRequestPopup = document.querySelector('.call-request-modal');
+    if (!callRequestPopup) return;
+    var callRequestPopupOpenControls = document.querySelectorAll('.js-call-request-open');
+    if (!callRequestPopupOpenControls) return;
+    var form = document.querySelector('.js-crmf');
+    var phoneInput = form.querySelector('.js-crmf-phone input');
+    var cleave = new Cleave(phoneInput, {
+      numericOnly: true,
+      prefix: '+375',
+      noImmediatePrefix: true,
+      delimiters: [' ( ', ' ) ', ' - ', ' - '],
+      blocks: [4, 2, 3, 2, 2]
+    }); // +7 ( 337 ) 777 - 77 - 77   => length = '24';
+    // +375 ( 29 ) 777 - 77 - 77   => length = '25';
+
+    function clearInputFields() {
+      phoneInput.value = '';
+    }
+
+    var closePopup = function closePopup() {
+      clearInputFields();
+      enableBodyScroll(callRequestPopup);
+    };
+
+    callRequestPopupOpenControls.forEach(function (currentControl) {
+      currentControl.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        window.openPopup('call-request-modal', closePopup);
+        disableBodyScroll(callRequestPopup, {
+          reserveScrollBarGap: true
+        });
+      });
+    });
+  });
+
   var header = (function () {
     var WindowBreakpoints = {
       DESKTOP: 1024,
@@ -1304,11 +1341,6 @@
     var dropdown = header.querySelector('.header__dropdown');
     var mainNavWrap = header.querySelector('.header__main-nav-wrap');
     var mainNav = header.querySelector('.header__main-nav');
-    var calculatorButton = header.querySelector('.header__calculator');
-    var scheduleWrap = header.querySelector('.header__schedule-wrap');
-    calculatorButton.addEventListener('click', function () {
-      console.log('Открыть калькулятор');
-    });
 
     var adjustDesktop = function adjustDesktop() {
       clearAllBodyScrollLocks();
@@ -1321,7 +1353,6 @@
       }
 
       var fragment = new DocumentFragment();
-      fragment.appendChild(scheduleWrap);
       fragment.appendChild(mainNav);
       dropdown.appendChild(fragment);
     };
@@ -1332,7 +1363,6 @@
       }
 
       var fragment = new DocumentFragment();
-      fragment.appendChild(scheduleWrap);
       fragment.appendChild(mainNav);
       dropdown.appendChild(fragment);
     };
@@ -1379,15 +1409,13 @@
     };
 
     var closeMenu = function closeMenu() {
-      header.classList.remove(headerOpenedClass);
-      clearAllBodyScrollLocks();
+      header.classList.remove(headerOpenedClass); // clearAllBodyScrollLocks(dropdown);
     };
 
     var openMenu = function openMenu() {
       adjustDropdownMaxHeight();
       header.classList.add(headerOpenedClass);
-      adjustMenu();
-      disableBodyScroll(dropdown);
+      adjustMenu(); // disableBodyScroll(dropdown);
     };
 
     burgerToggle.addEventListener('click', function () {
@@ -1413,48 +1441,42 @@
     window.addEventListener('resize', resizeThrottler, false);
     adjustMenu();
     /** ****************************************************************** */
-
-    var CATALOG_MODE_CLASS = 'header__dropdown--window';
-    var SUB_CATALOG_MODE_CLASS = 'header__dropdown--sub-catalog';
-    var ACTIVE_CATALOG_LINK_CLASS = 'nav-window__item--active';
-    var navCatalog = header.querySelector('.main-nav__item--window .main-nav__link');
-    navCatalog.addEventListener('click', function () {
-      if (dropdown.classList.contains(CATALOG_MODE_CLASS)) {
-        dropdown.classList.remove(CATALOG_MODE_CLASS);
-      } else {
-        dropdown.classList.add(CATALOG_MODE_CLASS);
-      }
-    });
-    var navCatalogLinks = header.querySelectorAll('.nav-window__link');
-    navCatalogLinks.forEach(function (element) {
-      element.addEventListener('click', function (e) {
-        var parent = e.target.parentElement;
-
-        if (parent.classList.contains(ACTIVE_CATALOG_LINK_CLASS)) {
-          // надо схлопнуть секцию
-          parent.classList.remove(ACTIVE_CATALOG_LINK_CLASS);
-        } else {
-          // надо найти открытую и закрыть, и затем открыть текущую
-          var currentOpened = header.querySelector(".".concat(ACTIVE_CATALOG_LINK_CLASS));
-
-          if (currentOpened) {
-            currentOpened.classList.remove(ACTIVE_CATALOG_LINK_CLASS);
-          }
-
-          parent.classList.add(ACTIVE_CATALOG_LINK_CLASS);
-        }
-
-        if (dropdown.classList.contains(SUB_CATALOG_MODE_CLASS)) {
-          var _currentOpened = header.querySelector(".".concat(ACTIVE_CATALOG_LINK_CLASS));
-
-          if (!_currentOpened) {
-            dropdown.classList.remove(SUB_CATALOG_MODE_CLASS);
-          }
-        } else {
-          dropdown.classList.add(SUB_CATALOG_MODE_CLASS);
-        }
-      });
-    });
+    // const CATALOG_MODE_CLASS = 'header__dropdown--window';
+    // const SUB_CATALOG_MODE_CLASS = 'header__dropdown--sub-catalog';
+    // const ACTIVE_CATALOG_LINK_CLASS = 'nav-window__item--active';
+    // const navCatalog = header.querySelector('.main-nav__item--window .main-nav__link');
+    // navCatalog.addEventListener('click', () => {
+    //   if (dropdown.classList.contains(CATALOG_MODE_CLASS)) {
+    //     dropdown.classList.remove(CATALOG_MODE_CLASS);
+    //   } else {
+    //     dropdown.classList.add(CATALOG_MODE_CLASS);
+    //   }
+    // });
+    // const navCatalogLinks = header.querySelectorAll('.nav-window__link');
+    // navCatalogLinks.forEach((element) => {
+    //   element.addEventListener('click', (e) => {
+    //     const parent = e.target.parentElement;
+    //     if (parent.classList.contains(ACTIVE_CATALOG_LINK_CLASS)) {
+    //       // надо схлопнуть секцию
+    //       parent.classList.remove(ACTIVE_CATALOG_LINK_CLASS);
+    //     } else {
+    //       // надо найти открытую и закрыть, и затем открыть текущую
+    //       const currentOpened = header.querySelector(`.${ACTIVE_CATALOG_LINK_CLASS}`);
+    //       if (currentOpened) {
+    //         currentOpened.classList.remove(ACTIVE_CATALOG_LINK_CLASS);
+    //       }
+    //       parent.classList.add(ACTIVE_CATALOG_LINK_CLASS);
+    //     }
+    //     if (dropdown.classList.contains(SUB_CATALOG_MODE_CLASS)) {
+    //       const currentOpened = header.querySelector(`.${ACTIVE_CATALOG_LINK_CLASS}`);
+    //       if (!currentOpened) {
+    //         dropdown.classList.remove(SUB_CATALOG_MODE_CLASS);
+    //       }
+    //     } else {
+    //       dropdown.classList.add(SUB_CATALOG_MODE_CLASS);
+    //     }
+    //   });
+    // });
   });
 
   /* global Cleave */
@@ -1598,8 +1620,8 @@
   formTextarea();
   modal(); // gagerModal();
   // discountModal();
-  // callRequestModal();
 
+  callRequestModal();
   header();
   offer(); // mainSlider();
 

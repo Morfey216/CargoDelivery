@@ -9,7 +9,7 @@
 
 // region libs
 // @import "libs/choices/choices";
-@import "libs/swiper/swiper";
+// @import "libs/swiper/swiper";
 // @import "libs/leaflet/leaflet";
 // @import "libs/leaflet/MarkerCluster";
 // @import "libs/leaflet/MarkerCluster.Default";
@@ -26,7 +26,10 @@
 @import "../blocks/modal/modal";
 // @import "../blocks/discount-modal/discount-modal";
 // @import "../blocks/gager-modal/gager-modal";
+@import "../blocks/call-request-modal/call-request-modal";
 @import "../blocks/ask-question-modal/ask-question-modal";
+@import "../blocks/contacts-phone/contacts-phone";
+@import "../blocks/main-nav/main-nav";
 @import "../blocks/header/header";
 @import "../blocks/offer/offer";
 @import "../blocks/page-footer/page-footer";

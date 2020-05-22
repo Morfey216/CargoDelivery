@@ -19,12 +19,6 @@ export default () => {
   const mainNavWrap = header.querySelector('.header__main-nav-wrap');
   const mainNav = header.querySelector('.header__main-nav');
 
-  const calculatorButton = header.querySelector('.header__calculator');
-
-  const scheduleWrap = header.querySelector('.header__schedule-wrap');
-
-  calculatorButton.addEventListener('click', () => { console.log('Открыть калькулятор'); });
-
   const adjustDesktop = () => {
     clearAllBodyScrollLocks(dropdown);
     mainNavWrap.prepend(mainNav);
@@ -37,7 +31,6 @@ export default () => {
     }
 
     const fragment = new DocumentFragment();
-    fragment.appendChild(scheduleWrap);
     fragment.appendChild(mainNav);
     dropdown.appendChild(fragment);
   };
@@ -49,7 +42,6 @@ export default () => {
 
     const fragment = new DocumentFragment();
 
-    fragment.appendChild(scheduleWrap);
     fragment.appendChild(mainNav);
 
     dropdown.appendChild(fragment);
@@ -94,14 +86,14 @@ export default () => {
 
   const closeMenu = () => {
     header.classList.remove(headerOpenedClass);
-    clearAllBodyScrollLocks(dropdown);
+    // clearAllBodyScrollLocks(dropdown);
   };
 
   const openMenu = () => {
     adjustDropdownMaxHeight();
     header.classList.add(headerOpenedClass);
     adjustMenu();
-    disableBodyScroll(dropdown);
+    // disableBodyScroll(dropdown);
   };
 
   burgerToggle.addEventListener('click', () => {
@@ -132,47 +124,47 @@ export default () => {
 
   /** ****************************************************************** */
 
-  const CATALOG_MODE_CLASS = 'header__dropdown--window';
-  const SUB_CATALOG_MODE_CLASS = 'header__dropdown--sub-catalog';
-  const ACTIVE_CATALOG_LINK_CLASS = 'nav-window__item--active';
+  // const CATALOG_MODE_CLASS = 'header__dropdown--window';
+  // const SUB_CATALOG_MODE_CLASS = 'header__dropdown--sub-catalog';
+  // const ACTIVE_CATALOG_LINK_CLASS = 'nav-window__item--active';
 
-  const navCatalog = header.querySelector('.main-nav__item--window .main-nav__link');
+  // const navCatalog = header.querySelector('.main-nav__item--window .main-nav__link');
 
-  navCatalog.addEventListener('click', () => {
-    if (dropdown.classList.contains(CATALOG_MODE_CLASS)) {
-      dropdown.classList.remove(CATALOG_MODE_CLASS);
-    } else {
-      dropdown.classList.add(CATALOG_MODE_CLASS);
-    }
-  });
+  // navCatalog.addEventListener('click', () => {
+  //   if (dropdown.classList.contains(CATALOG_MODE_CLASS)) {
+  //     dropdown.classList.remove(CATALOG_MODE_CLASS);
+  //   } else {
+  //     dropdown.classList.add(CATALOG_MODE_CLASS);
+  //   }
+  // });
 
-  const navCatalogLinks = header.querySelectorAll('.nav-window__link');
+  // const navCatalogLinks = header.querySelectorAll('.nav-window__link');
 
-  navCatalogLinks.forEach((element) => {
-    element.addEventListener('click', (e) => {
-      const parent = e.target.parentElement;
+  // navCatalogLinks.forEach((element) => {
+  //   element.addEventListener('click', (e) => {
+  //     const parent = e.target.parentElement;
 
-      if (parent.classList.contains(ACTIVE_CATALOG_LINK_CLASS)) {
-        // надо схлопнуть секцию
-        parent.classList.remove(ACTIVE_CATALOG_LINK_CLASS);
-      } else {
-        // надо найти открытую и закрыть, и затем открыть текущую
-        const currentOpened = header.querySelector(`.${ACTIVE_CATALOG_LINK_CLASS}`);
-        if (currentOpened) {
-          currentOpened.classList.remove(ACTIVE_CATALOG_LINK_CLASS);
-        }
+  //     if (parent.classList.contains(ACTIVE_CATALOG_LINK_CLASS)) {
+  //       // надо схлопнуть секцию
+  //       parent.classList.remove(ACTIVE_CATALOG_LINK_CLASS);
+  //     } else {
+  //       // надо найти открытую и закрыть, и затем открыть текущую
+  //       const currentOpened = header.querySelector(`.${ACTIVE_CATALOG_LINK_CLASS}`);
+  //       if (currentOpened) {
+  //         currentOpened.classList.remove(ACTIVE_CATALOG_LINK_CLASS);
+  //       }
 
-        parent.classList.add(ACTIVE_CATALOG_LINK_CLASS);
-      }
+  //       parent.classList.add(ACTIVE_CATALOG_LINK_CLASS);
+  //     }
 
-      if (dropdown.classList.contains(SUB_CATALOG_MODE_CLASS)) {
-        const currentOpened = header.querySelector(`.${ACTIVE_CATALOG_LINK_CLASS}`);
-        if (!currentOpened) {
-          dropdown.classList.remove(SUB_CATALOG_MODE_CLASS);
-        }
-      } else {
-        dropdown.classList.add(SUB_CATALOG_MODE_CLASS);
-      }
-    });
-  });
+  //     if (dropdown.classList.contains(SUB_CATALOG_MODE_CLASS)) {
+  //       const currentOpened = header.querySelector(`.${ACTIVE_CATALOG_LINK_CLASS}`);
+  //       if (!currentOpened) {
+  //         dropdown.classList.remove(SUB_CATALOG_MODE_CLASS);
+  //       }
+  //     } else {
+  //       dropdown.classList.add(SUB_CATALOG_MODE_CLASS);
+  //     }
+  //   });
+  // });
 };

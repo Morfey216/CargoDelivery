@@ -124,9 +124,13 @@
   border-bottom: 1px solid $gray;
 
   &:hover,
-  &:focus,
+  &:focus {
+    color: $orange-hover;
+    border-color: $orange-hover;
+  }
+
   &:active {
-    color: $green;
-    border-color: $green;
+    color: $orange-active;
+    border-color: $orange-active;
   }
 }

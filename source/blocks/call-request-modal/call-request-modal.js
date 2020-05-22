@@ -13,13 +13,14 @@ export default () => {
 
   const cleave = new Cleave(phoneInput, {
     numericOnly: true,
-    prefix: '+7',
+    prefix: '+375',
     noImmediatePrefix: true,
     delimiters: [' ( ', ' ) ', ' - ', ' - '],
-    blocks: [2, 3, 3, 2, 2],
+    blocks: [4, 2, 3, 2, 2],
   });
 
   // +7 ( 337 ) 777 - 77 - 77   => length = '24';
+  // +375 ( 29 ) 777 - 77 - 77   => length = '25';
 
   function clearInputFields() {
     phoneInput.value = '';

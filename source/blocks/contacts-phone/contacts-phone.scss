@@ -1,0 +1,21 @@
+.contacts-phone {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+}
+
+.contacts-phone__icon {
+  position: absolute;
+  top: 6px;
+  left: 0;
+
+  @include mobile-max {
+    top: 3px;
+  }
+}
+
+.contacts-phone__phone {
+  @include ubuntu(15, 24, 700);
+  color: $text-color;
+  display: block;
+}
