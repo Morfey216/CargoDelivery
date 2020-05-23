@@ -18,4 +18,10 @@
   @include ubuntu(15, 24, 700);
   color: $text-color;
   display: block;
+
+  &:hover,
+  :focus,
+  :active {
+    color: $orange-hover;
+  }
 }

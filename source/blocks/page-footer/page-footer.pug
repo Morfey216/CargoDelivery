@@ -1,121 +1,59 @@
+include ../menu-nav/menu-nav
+include ../contacts-phone/contacts-phone
+
 -
-  const windowCategories = [
-    'Дерево-алюминиевые окна',
-    'Финские окна Скандинавские окна',
-    'Деревянные панорамные окна',
-    'Дерево-алюминиевые панорамные окна',
-    'Аксессуары для окон',
-    'Окна в Подмосковье'
-  ]
--
-  const services = [
-    'Остекление балконов',
-    'Остекление коттеджей',
-    'Монтаж деревянных окон',
-    'Гарантийное обслуживание',
-    'Ремонт окон из дерева',
-    'Замер и консультация'
-  ]
--
-  const aboutPoints = [
-    'Остекление балконов',
-    'Остекление коттеджей',
-    'Монтаж деревянных окон',
-    'Гарантийное обслуживание',
-    'Ремонт окон из дерева',
-    'Замер и консультация'
-  ]
+  const footerNavList = [
+      {
+        item: 'Оффер',
+        anchor: 'offer',
+      },
+      {
+        item: 'Услуги',
+        anchor: 'services',
+      },
+      {
+        item: 'Гарантии',
+        anchor: 'warranty',
+      },
+      {
+        item: 'Доставка',
+        anchor: 'delivery',
+      },
+      {
+        item: 'Отзывы',
+        anchor: 'reviews',
+      },
+      {
+        item: 'Вопросы',
+        anchor: 'faq',
+      },
+      {
+        item: 'Контакты',
+        anchor: 'contacts',
+      },
+    ]
 
 mixin page-footer(mod)
   footer.page-footer
     div.page-footer__top
-      div.page-footer__company
-        div.page-footer__logo
-          a.page-footer__logo-link
-            img(src="img/logos/logo-footer.png" width="163" height="44" alt="Логотип  WINFIN").page-footer__logo-img.lz-img
-        if (mod === 'contacts')
-          div.page-footer__company-details
-            h2.page-footer__company-details-title Реквизиты компании:
-            p.page-footer__company-name Общество с ограниченной ответственностью «Иртыш»
-            p.page-footer__company-location Юр.&nbsp;адрес: 127018, г.&nbsp;Москва, пер.&nbsp;2&#8209;й&nbsp;Вышеславцев,&nbsp;д.1А
-            p.page-footer__company-requisites ИНН&nbsp;7715868422 КПП&nbsp;771501001 ОГРН&nbsp;1117746421539
-        else
-          p.page-footer__logo-description Деревянные окна "под ключ" производство, поставка и установка по России
-            if (mod === '404')
-              |
-              |
-              span.page-footer__404-requisites ОГРН&nbsp;1117746421539 ИНН&nbsp;7715868422
-        div.page-footer__technology
-          img(src="img/icons/fin-flag.png" width="38" height="23" alt="Флаг Финляндии").page-footer__technology-img.lz-img
-          p.page-footer__technology-description Finland Technology
-
-      nav(aria-label="Дополнительное меню").page-footer__nav
-        div.page-footer__nav-block
-          h2.page-footer__nav-header ДЕРЕВЯННЫЕ ОКНА
-          ul.page-footer__nav-list.page-footer__nav-list--categories
-            each win in windowCategories
-              li.page-footer__item
-                a(href="#").page-footer__link #{win}
-
-        div.page-footer__nav-block
-          h2.page-footer__nav-header УСЛУГИ
-          ul.page-footer__nav-list.page-footer__nav-list--services
-            each service in services
-              li.page-footer__item
-                a(href="#").page-footer__link #{service}
-
-        div.page-footer__nav-block
-          h2.page-footer__nav-header О НАС
-          ul.page-footer__nav-list.page-footer__nav-list--about
-            each about in aboutPoints
-              li.page-footer__item
-                a(href="#").page-footer__link #{about}
+      +menu-nav(footerNavList, 'Дополнительное меню').page-footer__nav
+      +contacts-phone('phone-icon.png', 13, 14).footer__contacts-phone
+      div.page-footer__social
+        h2.visually-hidden Мы в соцсетях
+        ul.page-footer__social-list
+          li.page-footer__social-item
+            a(href="#").page-footer__social-link
+              img(src="img/icons/vk-yellow.png" width="26" height="16" alt="Логотип Вконтакте").page-footer__icon
+              span.visually-hidden Следите за новостями во Вконтакте
+          li.page-footer__social-item
+            a(href="#").page-footer__social-link
+              img(src="img/icons/youtube-yellow.png" width="26" height="18" alt="Логотип YouTube").page-footer__icon
+              span.visually-hidden Подписывайтесь на наш YouTube-канал
+          li.page-footer__social-item
+            a(href="#").page-footer__social-link
+              img(src="img/icons/facebook-yellow.png" width="19" height="19" alt="Логотип Facebook").page-footer__icon
+              span.visually-hidden Следите за новостями в Facebook
 
     div.page-footer__bottom
       div.page-footer__wrapper
-        div.page-footer__social
-          h2.visually-hidden Мы в соцсетях
-          ul.page-footer__social-list
-            li.page-footer__social-item
-              a(href="#").page-footer__social-link
-                img(src="img/icons/vk-yellow.png" width="26" height="16" alt="Логотип Вконтакте").page-footer__icon
-                span.visually-hidden Следите за новостями во Вконтакте
-            li.page-footer__social-item
-              a(href="#").page-footer__social-link
-                img(src="img/icons/youtube-yellow.png" width="26" height="18" alt="Логотип YouTube").page-footer__icon
-                span.visually-hidden Подписывайтесь на наш YouTube-канал
-            li.page-footer__social-item
-              a(href="#").page-footer__social-link
-                img(src="img/icons/facebook-yellow.png" width="19" height="19" alt="Логотип Facebook").page-footer__icon
-                span.visually-hidden Следите за новостями в Facebook
-            li.page-footer__social-item
-              a(href="#").page-footer__social-link
-                img(src="img/icons/odnoklassniki-yellow.png" width="12" height="18" alt="Логотип Одноклассники").page-footer__icon
-                span.visually-hidden Следите за новостями в Одноклассниках
-
-        div.page-footer__info
-          p.page-footer__info-item
-              img(src="img/icons/appointment-gray.png" width="28" height="28" alt="Расписание").page-footer__info-img--appointment
-              span.page-footer__info-description Ежеднедневно:
-              span.page-footer__info-text с 10:00 - 20:00
-          p.page-footer__info-item
-              img(src="img/icons/mail-gray.png" width="28" height="28" alt="E-mail").page-footer__info-img--mail
-              span.page-footer__info-description Написать:
-              a(href="mailto:winfin@winfin.ru").page-footer__info-text winfin@winfin.ru
-
-        div.page-footer__messenger
-          h2.visually-hidden Мы в мессенджерах
-          p.page-footer_messenger-name WhatsApp/Viber/Telegram
-          ul.page-footer__messenger-list
-            li.page-footer__messenger-item
-              a(href="#").page-footer__messenger-link
-                img(src="img/icons/telegram-gray.png" width="31" height="27" alt="Логотип Telegram").page-footer__icon
-                span.visually-hidden Наш Telegram
-            li.page-footer__messenger-item
-              a(href="#").page-footer__messenger-link
-                img(src="img/icons/whatsapp-gray.png" width="30" height="30" alt="Логотип WhatsApp").page-footer__icon
-                span.visually-hidden Наш WhatsApp
-            li.page-footer__messenger-item
-              a(href="#").page-footer__messenger-link
-                img(src="img/icons/viber-gray.png" width="29" height="32" alt="Логотип Viber").page-footer__icon
-                span.visually-hidden Наш Viber
+        p.page-footer__copyright All contents © copyright 2020
