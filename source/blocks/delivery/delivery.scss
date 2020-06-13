@@ -1,16 +1,22 @@
 .delivery {
-  padding-top: 70px;
-  padding-bottom: 100px;
+  padding-top: 120px;
   background-color: $light-blue;
+
+  @include mobile-max {
+    padding-top: 70px;
+  }
 }
 
 .delivery__title {
   margin-bottom: 85px;
+
+  @include mobile-max {
+    margin-bottom: 70px;
+  }
 }
 
 .delivery__list {
   @include list-reset;
-  @include ubuntu(17, 24, 400);
 
   display: flex;
   flex-wrap: wrap;
@@ -18,19 +24,37 @@
 }
 
 .delivery__item {
+  @include cadillac-b(22, 26);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  width: 260px;
-  margin-bottom: 100px;
+  width: 380px;
+  margin-bottom: 120px;
+
+  @include tablet-max {
+    width: 370px;
+  }
+
+  @include mobile-max {
+    @include cadillac-b(16, 20);
+
+    width: 250px;
+    margin-bottom: 50px;
+  }
+}
+
+.delivery__item-title {
+  text-align: center;
 }
 
 .delivery__img {
-  width: 75px;
-  height: 75px;
+  width: 76px;
+  height: 76px;
   margin: 0 auto;
+  margin-bottom: 30px;
 
   display: flex;
   justify-content: center;

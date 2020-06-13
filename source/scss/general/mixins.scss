@@ -5,11 +5,11 @@
   font-weight: $weight;
 }
 
-@mixin cadillac-b($size, $height, $weight) {
+@mixin cadillac-b($size, $height) {
   font-family: $cadillac-b;
   font-size: $size + px;
   line-height: $height + px;
-  font-weight: $weight;
+  font-weight: normal;
 }
 
 @mixin list-reset {
