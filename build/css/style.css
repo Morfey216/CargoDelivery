@@ -1018,12 +1018,16 @@ button.swiper-pagination-bullet {
   cursor: pointer; }
   .pagination-bullet--active {
     background-color: #666666; }
+  @media (max-width: 767px) {
+    .pagination-bullet {
+      width: 15px;
+      height: 15px; } }
 
 .pagination-bullet:not(:last-of-type) {
   margin-right: 7px; }
   @media (max-width: 767px) {
     .pagination-bullet:not(:last-of-type) {
-      margin-right: 7px; } }
+      margin-right: 5px; } }
 
 .slider-navigation {
   display: -webkit-box;
@@ -1269,6 +1273,9 @@ button.swiper-pagination-bullet {
 
 .advantages__title {
   margin-bottom: 45px; }
+  @media (max-width: 767px) {
+    .advantages__title {
+      margin-bottom: 10px; } }
 
 .advantages__container {
   position: relative;
@@ -1305,11 +1312,37 @@ button.swiper-pagination-bullet {
   min-height: 240px;
   padding: 47px;
   background-color: #666666; }
+  @media (max-width: 767px) {
+    .advantages__item {
+      min-height: 180px;
+      padding: 35px; } }
+  @media (max-width: 579px) {
+    .advantages__item {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      min-height: 250px;
+      padding: 35px;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; } }
 
 .advantages__item-img {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   margin: 0 45px; }
+  @media (max-width: 1023px) {
+    .advantages__item-img {
+      width: 150px;
+      margin-left: 0; } }
+  @media (max-width: 767px) {
+    .advantages__item-img {
+      width: 100px; } }
+  @media (max-width: 579px) {
+    .advantages__item-img {
+      margin: 0;
+      margin-bottom: 20px; } }
 
 .advantages__item-content {
   color: #ffffff; }
@@ -1321,6 +1354,25 @@ button.swiper-pagination-bullet {
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 20px; }
+  @media (max-width: 1199px) {
+    .advantages__item-title {
+      font-family: "Cadillac Sans A", "Arial", sans-serif;
+      font-size: 30px;
+      line-height: 30px;
+      font-weight: 600; } }
+  @media (max-width: 767px) {
+    .advantages__item-title {
+      font-family: "Cadillac Sans A", "Arial", sans-serif;
+      font-size: 22px;
+      line-height: 25px;
+      font-weight: 600; } }
+  @media (max-width: 579px) {
+    .advantages__item-title {
+      font-family: "Cadillac Sans A", "Arial", sans-serif;
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 600;
+      text-align: center; } }
 
 .advantages__item-description {
   font-family: "Cadillac Sans A Book", "Arial", sans-serif;
@@ -1328,6 +1380,27 @@ button.swiper-pagination-bullet {
   line-height: 40px;
   font-weight: normal;
   text-transform: uppercase; }
+  @media (max-width: 1199px) {
+    .advantages__item-description {
+      font-family: "Cadillac Sans A Book", "Arial", sans-serif;
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: normal; } }
+  @media (max-width: 1023px) {
+    .advantages__item-description {
+      font-family: "Cadillac Sans A Book", "Arial", sans-serif;
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: normal; } }
+  @media (max-width: 767px) {
+    .advantages__item-description {
+      font-family: "Cadillac Sans A Book", "Arial", sans-serif;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: normal; } }
+  @media (max-width: 579px) {
+    .advantages__item-description {
+      text-align: center; } }
 
 .delivery {
   padding-top: 120px;
