@@ -304,7 +304,7 @@ template, [hidden] {
   src: url("../fonts/cadillac-sans-a-semibold.woff2") format("woff2"), url("../fonts/cadillac-sans-a-semibold.woff") format("woff"); }
 
 .container {
-  max-width: 1200px;
+  max-width: 1170px;
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
@@ -479,6 +479,66 @@ input:not([type="checkbox"]):not([type="radio"]) {
 .button__icon-tape {
   margin-right: 7px; }
 
+.services {
+  padding-top: 120px;
+  padding-bottom: 100px;
+  background: #666666 url("../img/bg/services-bg.jpg") center center no-repeat;
+  background-size: cover; }
+  @media (max-width: 767px) {
+    .services {
+      padding-top: 70px;
+      padding-bottom: 70px; } }
+
+.services__title {
+  margin-bottom: 85px; }
+
+.services__list {
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+.services__service-item {
+  font-family: "Cadillac Sans A Book", "Arial", sans-serif;
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: normal;
+  color: #58c5d9;
+  width: 525px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 80px; }
+  @media (max-width: 767px) {
+    .services__service-item {
+      padding-bottom: 50px; } }
+
+.services__item-title {
+  font-family: "Cadillac Sans A Book", "Arial", sans-serif;
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: normal; }
+  @media (max-width: 767px) {
+    .services__item-title {
+      font-family: "Cadillac Sans A Book", "Arial", sans-serif;
+      font-size: 19px;
+      line-height: 20px;
+      font-weight: normal; } }
+
+.services__service-img {
+  width: 71px;
+  margin-right: 20px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+
 .delivery {
   padding-top: 120px;
   background-color: #e7edf3; }
@@ -487,7 +547,8 @@ input:not([type="checkbox"]):not([type="radio"]) {
       padding-top: 70px; } }
 
 .delivery__title {
-  margin-bottom: 85px; }
+  margin-bottom: 85px;
+  color: #394b50; }
   @media (max-width: 767px) {
     .delivery__title {
       margin-bottom: 70px; } }
@@ -501,13 +562,17 @@ input:not([type="checkbox"]):not([type="radio"]) {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
-      justify-content: space-around; }
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start; }
 
 .delivery__item {
   font-family: "Cadillac Sans A Book", "Arial", sans-serif;
   font-size: 22px;
   line-height: 26px;
   font-weight: normal;
+  color: #394b50;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -521,11 +586,11 @@ input:not([type="checkbox"]):not([type="radio"]) {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 380px;
+  width: 330px;
   margin-bottom: 120px; }
   @media (max-width: 1199px) {
     .delivery__item {
-      width: 370px; } }
+      width: 255px; } }
   @media (max-width: 767px) {
     .delivery__item {
       font-family: "Cadillac Sans A Book", "Arial", sans-serif;
@@ -536,7 +601,17 @@ input:not([type="checkbox"]):not([type="radio"]) {
       margin-bottom: 50px; } }
 
 .delivery__item-title {
+  font-family: "Cadillac Sans A", "Arial", sans-serif;
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: 600;
   text-align: center; }
+  @media (max-width: 767px) {
+    .delivery__item-title {
+      font-family: "Cadillac Sans A", "Arial", sans-serif;
+      font-size: 20px;
+      line-height: 20px;
+      font-weight: 600; } }
 
 .delivery__img {
   width: 76px;

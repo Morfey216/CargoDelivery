@@ -1,6 +1,14 @@
 .services {
-  padding-top: 70px;
+  padding-top: 120px;
   padding-bottom: 100px;
+
+  background: $gray url("../img/bg/services-bg.jpg") center center no-repeat;
+  background-size: cover;
+
+  @include mobile-max {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
 }
 
 .services__title {
@@ -9,26 +17,37 @@
 
 .services__list {
   @include list-reset;
-  @include ubuntu(17, 24, 400);
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .services__service-item {
-  width: 450px;
+  @include cadillac-b(22, 24);
+  color: $blue;
+
+  width: 525px;
+
   display: flex;
   align-items: center;
-  padding-bottom: 40px;
+  padding-bottom: 80px;
 
-  h3 {
-    font-size: 16px;
-    color: $title-color;
-    text-transform: uppercase;
+  @include mobile-max {
+    padding-bottom: 50px;
+  }
+}
+
+.services__item-title {
+  @include cadillac-b(22, 24);
+
+  @include mobile-max {
+    @include cadillac-b(19, 20);
   }
 }
 
 .services__service-img {
-  width: 80px;
+  width: 71px;
+  margin-right: 20px;
+  flex-shrink: 0;
 }

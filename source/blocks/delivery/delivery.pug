@@ -42,10 +42,11 @@ include ../title/title
 
 section.delivery#delivery
   +title('Доставляем по всему миру', 'gray').delivery__title
-  ul.delivery__list.container
-    each delivery in deliveryList
-      li.delivery__item
-        div.delivery__img
-          img(src="img/delivery/" + delivery.img width= delivery.w height= delivery.h alt="")
-        h3.delivery__item-title!= delivery.content
+  div.container
+    ul.delivery__list
+      each delivery in deliveryList
+        li.delivery__item
+          div.delivery__img
+            img(src="img/delivery/" + delivery.img width= delivery.w height= delivery.h alt="")
+          h3.delivery__item-title!= delivery.content
 
