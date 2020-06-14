@@ -1,0 +1,57 @@
+include ../title/title
+include ../slider-navigation/slider-navigation
+
+-
+  const advantagesList = [
+      {
+        img: '24in7.png',
+        w: '200',
+        h: '200',
+        title: 'Поддержка 24/7',
+        description: 'Клиентская поддержка, полный контроль на всех этапах, оперативное решение вопросов.',
+      },
+      {
+        img: 'quality.png',
+        w: '200',
+        h: '200',
+        title: 'Контроль качества',
+        description: 'Складские комплексы с инспекторами по качеству в США, Китае, Европе, России и Беларуси. Проверка по характеристикам и качеству, подготовка и упаковка товара по требованиям перед отправкой.',
+      },
+      {
+        img: 'warranty.png',
+        w: '200',
+        h: '200',
+        title: 'Гарантия безопасности',
+        description: 'Юридическая помощь при заключении контракта с производителем. Помощь с безопасной оплатой на фабрики. Полное сопровождение сделки. Страхование и отслеживание груза.',
+      },
+      {
+        img: 'prof.png',
+        w: '200',
+        h: '200',
+        title: 'Профессионализм',
+        description: 'Большой опыт работы с ТНВЭД, оптимизация ставки пошлины, опытные декларанты, множество готовых сертификатов, сертификация новых продуктов, оперативное таможенное оформление.',
+      },
+      {
+        img: 'customer.png',
+        w: '200',
+        h: '200',
+        title: 'Клиентоориентированность',
+        description: 'Работаем с физическими и юридическими лицами, ищем и доставляем любой товар по всему миру. Составляем максимально бюджетный маршрут. Для нас не существует безвыходных ситуаций.',
+      },
+    ]
+
+section.advantages
+  div.container
+    +title('Преимущества', 'white').advantages__title
+    div.advantages__container
+      +slider-navigation(false, 'advantages').advantages__slider-navigation
+      div.advantages__wrapper
+        each advantage in advantagesList
+          div.advantages__slide
+            div.advantages__item
+              div.advantages__item-img
+                img(src="img/advantages/" + advantage.img width= advantage.w height= advantage.h alt= advantage.title)
+              div.advantages__item-content
+                h3.advantages__item-title!= advantage.title
+                p.advantages__item-description!= advantage.description
+      div.advantages__pagination

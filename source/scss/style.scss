@@ -9,7 +9,7 @@
 
 // region libs
 // @import "libs/choices/choices";
-// @import "libs/swiper/swiper";
+@import "libs/swiper/swiper";
 // @import "libs/leaflet/leaflet";
 // @import "libs/leaflet/MarkerCluster";
 // @import "libs/leaflet/MarkerCluster.Default";
@@ -20,6 +20,8 @@
 // region Blocks
 @import "../blocks/title/title";
 // @import "../blocks/link/link";
+@import "../blocks/pagination-bullet/pagination-bullet";
+@import "../blocks/slider-navigation/slider-navigation";
 @import "../blocks/button/button";
 // @import "../blocks/form-input/form-input";
 // @import "../blocks/form-textarea/form-textarea";
@@ -35,6 +37,7 @@
 // @import "../blocks/page-footer/page-footer";
 // @import "../blocks/overlay/overlay";
 @import "../blocks/services/services";
+@import "../blocks/advantages/advantages";
 // @import "../blocks/semantic/semantic";
 @import "../blocks/delivery/delivery";
 // @import "../blocks/reviews/reviews";

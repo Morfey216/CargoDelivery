@@ -993,82 +993,6 @@
     });
   });
 
-  var modal = (function () {
-    var classEnabled = 'enabled';
-    var classScrolled = 'scrolled';
-    var overlay = document.querySelector('.js-modal-overlay');
-    var timer;
-    var isScroll = false;
-    var deltaWidth = 0;
-
-    function scrollReInit(modal, initHeight, initWidth) {
-      if (document.body.clientHeight < modal.clientHeight || document.body.clientHeight < initHeight) {
-        modal.classList.add(classScrolled);
-        deltaWidth = initWidth - modal.clientWidth;
-        isScroll = true;
-      } else {
-        modal.classList.remove(classScrolled);
-        isScroll = false;
-        deltaWidth = 0;
-      }
-
-      if (isScroll) {
-        modal.style.width = "".concat(initWidth + deltaWidth, "px");
-      } else {
-        modal.style.width = '';
-      }
-    }
-
-    function openPopup(id, callback) {
-      var modal = document.getElementById(id);
-      var close = modal.querySelector('.js-modal-close');
-      var initWidth = 0;
-      var initHeight = 0;
-
-      function onResize() {
-        clearTimeout(timer);
-        timer = setTimeout(function () {
-          modal.style.width = '';
-          initWidth = modal.clientWidth + deltaWidth;
-          scrollReInit(modal, initHeight, initWidth);
-        }, 300);
-      }
-
-      var closeModal = function closeModal() {
-        callback();
-        modal.classList.remove(classScrolled);
-        modal.style.width = '';
-        modal.classList.remove(classEnabled);
-        overlay.classList.remove(classEnabled);
-        document.removeEventListener('keydown', onPopupKeydown);
-        overlay.removeEventListener('click', closeModal);
-        close.removeEventListener('click', closeModal);
-        window.removeEventListener('resize', onResize);
-      };
-
-      var onPopupKeydown = function onPopupKeydown(evt) {
-        if (evt.key === 'Escape') {
-          evt.preventDefault();
-          closeModal();
-        }
-      };
-
-      modal.classList.add(classEnabled);
-      overlay.classList.add(classEnabled);
-      initHeight = modal.clientHeight;
-      initWidth = modal.clientWidth;
-      scrollReInit(modal, initHeight, initWidth);
-      close.addEventListener('click', closeModal);
-      document.addEventListener('keydown', onPopupKeydown);
-      setTimeout(function () {
-        overlay.addEventListener('click', closeModal);
-      }, 1000);
-      window.addEventListener('resize', onResize);
-    }
-
-    window.openPopup = openPopup;
-  });
-
   // Older browsers don't support event options, feature detect it.
   // Adopted and modified solution from Bohdan Didukh (2017)
   // https://stackoverflow.com/questions/41594997/ios-10-safari-prevent-scrolling-behind-a-fixed-overlay-and-maintain-scroll-posi
@@ -1260,73 +1184,6 @@
       locks = [];
     }
   };
-  var enableBodyScroll = function enableBodyScroll(targetElement) {
-    if (isIosDevice) {
-      if (!targetElement) {
-        // eslint-disable-next-line no-console
-        console.error('enableBodyScroll unsuccessful - targetElement must be provided when calling enableBodyScroll on IOS devices.');
-        return;
-      }
-
-      targetElement.ontouchstart = null;
-      targetElement.ontouchmove = null;
-      locks = locks.filter(function (lock) {
-        return lock.targetElement !== targetElement;
-      });
-
-      if (documentListenerAdded && locks.length === 0) {
-        document.removeEventListener('touchmove', preventDefault, hasPassiveEvents ? {
-          passive: false
-        } : undefined);
-        documentListenerAdded = false;
-      }
-    } else {
-      locks = locks.filter(function (lock) {
-        return lock.targetElement !== targetElement;
-      });
-
-      if (!locks.length) {
-        restoreOverflowSetting();
-      }
-    }
-  };
-
-  /* global Cleave */
-  var callRequestModal = (function () {
-    var callRequestPopup = document.querySelector('.call-request-modal');
-    if (!callRequestPopup) return;
-    var callRequestPopupOpenControls = document.querySelectorAll('.js-call-request-open');
-    if (!callRequestPopupOpenControls) return;
-    var form = document.querySelector('.js-crmf');
-    var phoneInput = form.querySelector('.js-crmf-phone input');
-    var cleave = new Cleave(phoneInput, {
-      numericOnly: true,
-      prefix: '+375',
-      noImmediatePrefix: true,
-      delimiters: [' ( ', ' ) ', ' - ', ' - '],
-      blocks: [4, 2, 3, 2, 2]
-    }); // +7 ( 337 ) 777 - 77 - 77   => length = '24';
-    // +375 ( 29 ) 777 - 77 - 77   => length = '25';
-
-    function clearInputFields() {
-      phoneInput.value = '';
-    }
-
-    var closePopup = function closePopup() {
-      clearInputFields();
-      enableBodyScroll(callRequestPopup);
-    };
-
-    callRequestPopupOpenControls.forEach(function (currentControl) {
-      currentControl.addEventListener('click', function (evt) {
-        evt.preventDefault();
-        window.openPopup('call-request-modal', closePopup);
-        disableBodyScroll(callRequestPopup, {
-          reserveScrollBarGap: true
-        });
-      });
-    });
-  });
 
   var header = (function () {
     var WindowBreakpoints = {
@@ -1479,154 +1336,65 @@
     // });
   });
 
-  /* global Cleave */
-  var offer = (function () {
-    var form = document.querySelector('.js-ocf');
-    if (!form) return;
-    var phoneInput = form.querySelector('.js-ocf-phone input');
-    var nameInput = form.querySelector('.js-ocf-name input');
-    var mailInput = form.querySelector('.js-ocf-email input');
-    var cleave = new Cleave(phoneInput, {
-      numericOnly: true,
-      prefix: '+375',
-      noImmediatePrefix: true,
-      delimiters: [' ( ', ' ) ', ' - ', ' - '],
-      blocks: [4, 2, 3, 2, 2]
-    }); // +7 ( 337 ) 777 - 77 - 77   => length = '24';
-    // +375 ( 29 ) 777 - 77 - 77   => length = '25';
+  /* global Swiper */
+  var advantages = (function () {
+    var container = document.querySelector('.advantages__container');
+    if (!container) return;
+    var wrapper = container.querySelector('.advantages__wrapper');
+    var slides = container.querySelectorAll('.advantages__slide');
 
-    function inputKeyCheck(evt) {
-      if (!evt.key) return;
-      var en = new RegExp('^[a-zA-Z ]+$');
-      var ru = new RegExp('^[а-яА-Я ]+$');
-
-      if (!en.test(evt.key) && !ru.test(evt.key)) {
-        evt.preventDefault();
-      }
-    }
-
-    nameInput.addEventListener('keypress', inputKeyCheck);
-  });
-
-  var faq = (function () {
-    var faq = document.querySelector('.faq__questions');
-    if (!faq) return;
-    var controls = faq.querySelectorAll('.js-faq-control');
-    var activeClass = 'faq__question--open';
-    controls.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        btn.classList.toggle(activeClass);
+    function initializeAdvantages() {
+      container.classList.add('swiper-container');
+      wrapper.classList.add('swiper-wrapper');
+      slides.forEach(function (slide) {
+        slide.classList.add('swiper-slide');
       });
-    });
-  });
-
-  /* global Parsley */
-  var askQuestionModal = (function () {
-    var askQuestionPopup = document.querySelector('.ask-question-modal');
-    if (!askQuestionPopup) return;
-    var askQuestionPopupOpenControls = document.querySelectorAll('.js-ask-question-open');
-    if (!askQuestionPopupOpenControls) return;
-    var form = askQuestionPopup.querySelector('.js-aqmf');
-    if (!form) return;
-    var phoneInput = form.querySelector('.js-aqmf-phone input');
-    var nameInput = form.querySelector('.js-aqmf-name input');
-    var questionInput = form.querySelector('.js-aqmf-textarea textarea');
-    var validInput = form.querySelector('.js-aqmf-validate');
-    var button = form.querySelector('.js-aqmf-submit');
-    if (!questionInput) return;
-    var parsleyForm;
-    var cleave;
-    var parsleyOptions = {
-      uiEnabled: false,
-      focus: 'none'
-    };
-
-    if (phoneInput) {
-      cleave = new Cleave(phoneInput, {
-        numericOnly: true,
-        prefix: '+375',
-        noImmediatePrefix: true,
-        delimiters: [' ( ', ' ) ', ' - ', ' - '],
-        // blocks: [2, 3, 3, 2, 2],
-        blocks: [4, 2, 3, 2, 2]
-      }); // +7 ( 337 ) 777 - 77 - 77
-      // +375 ( 29 ) 777 - 77 - 77   => length = '25';
-
-      phoneInput.dataset.parsleyMinlength = '25';
-    }
-
-    function inputKeyCheck(evt) {
-      if (!evt.key) return;
-      var en = new RegExp('^[a-zA-Z ]+$');
-      var ru = new RegExp('^[а-яА-Я ]+$');
-
-      if (!en.test(evt.key) && !ru.test(evt.key)) {
-        evt.preventDefault();
-      }
-    }
-
-    if (nameInput) {
-      nameInput.addEventListener('keypress', inputKeyCheck);
-    }
-
-    function submitButtonListener(evt) {
-      evt.preventDefault();
-      parsleyForm.validate();
-    }
-
-    function onSuccess() {// console.log('success');
-    }
-
-    if (button) {
-      button.addEventListener('click', submitButtonListener);
-    }
-
-    if (validInput) {
-      parsleyForm = new Parsley.Factory(form, parsleyOptions);
-      parsleyForm.on('form:success', onSuccess);
-      parsleyForm.on('field:error', function (evt) {
-        evt.element.closest('.js-aqmf-validate').classList.add('error');
-      });
-      parsleyForm.on('field:success', function (evt) {
-        evt.element.closest('.js-aqmf-validate').classList.remove('error');
+      var swiperAdvantages = new Swiper(container, {
+        direction: 'horizontal',
+        loop: true,
+        preloadImages: true,
+        loadPrevNext: true,
+        loadPrevNextAmount: 2,
+        slidesPerView: 1,
+        spaceBetween: 20,
+        slidesOffsetBefore: 0,
+        slidesOffsetAfter: 0,
+        breakpoints: {},
+        navigation: {
+          nextEl: '.advantages__navigation-btn-next',
+          prevEl: '.advantages__navigation-btn-prev'
+        },
+        pagination: {
+          el: '.advantages__pagination',
+          type: 'bullets',
+          bulletElement: 'span',
+          bulletClass: 'pagination-bullet',
+          bulletActiveClass: 'pagination-bullet--active',
+          clickable: true
+        }
       });
     }
 
-    function clearInputFields() {
-      phoneInput.value = '';
-      nameInput.value = '';
-      questionInput.value = '';
-    }
-
-    var closePopup = function closePopup() {
-      clearInputFields();
-      enableBodyScroll(askQuestionPopup);
-    };
-
-    askQuestionPopupOpenControls.forEach(function (currentControl) {
-      currentControl.addEventListener('click', function (evt) {
-        evt.preventDefault();
-        window.openPopup('ask-question-modal', closePopup);
-        disableBodyScroll(askQuestionPopup, {
-          reserveScrollBarGap: true
-        });
-      });
-    });
+    initializeAdvantages();
   });
 
   /* eslint-disable */
+  // import mainSlider from '../blocks/main-slider/main-slider';
+  // import faq from '../blocks/faq/faq';
+  // import askQuestionModal from '../blocks/ask-question-modal/ask-question-modal';
+  // endregion
 
   formInput();
-  formTextarea();
-  modal(); // gagerModal();
+  formTextarea(); // modal();
+  // gagerModal();
   // discountModal();
+  // callRequestModal();
 
-  callRequestModal();
   header();
-  offer(); // mainSlider();
-
-  faq();
-  askQuestionModal();
+  advantages(); // offer();
+  // mainSlider();
+  // faq();
+  // askQuestionModal();
 
 }());
 //# sourceMappingURL=main.js.map
