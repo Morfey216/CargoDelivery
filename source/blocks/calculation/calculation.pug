@@ -1,0 +1,18 @@
+include ../title/title
+include ../form-input/form-input
+include ../form-textarea/form-textarea
+include ../button/button
+
+section.calculation#calculation
+  +title('Расчет стоимости товара').calculation__title
+  p.calculation__subtitle Отправьте нам данные и мы расчитаем стоимость
+  div.container
+    form.calculation__contact-form.js-ccf(action="#" method="post")
+      +form-input({label: 'Ваше имя', error: 'Введите имя',})(type="text" name="name").calculation__form-input.js-ccf-name#ccf-name
+      +form-input({label: 'Ваша почта', error: 'Введите E-mail',})(type="email" name="email").calculation__form-input.js-ccf-email#ccf-email
+      +form-input({label: '+375 ( _ _ ) _ _ _ – _ _ – _ _', error: 'Неверный номер',})(type="tel" name="phone").calculation__form-input.js-ccf-phone#ccf-phone
+      +form-input({label: 'Страна', error: 'Введите страну',})(type="text" name="country").calculation__form-input.js-ccf-country#ccf-country
+      +form-input({label: 'Город', error: 'Введите горорд',})(type="text" name="city").calculation__form-input.js-ccf-city#ccf-city
+      +form-input({label: 'Из какой страны товар', error: 'Укажите, из какой страны товар',})(type="text" name="sending-point").calculation__form-input.js-ccf-sending-point#ccf-sending-point
+      +form-textarea({label: 'Описание товара', error: 'Укажите описание товара',})(name="description").calculation__form-textarea.js-ccf-description#ccf-description
+      +button('Отправить', 'orange')(type="submit").calculation__form-submit-button.js-ccf-submit
