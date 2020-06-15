@@ -1,27 +1,54 @@
 .contacts-phone {
-  display: block;
-  position: relative;
-  padding-left: 25px;
+  display: flex;
+  align-items: center;
 }
 
 .contacts-phone__icon {
-  position: absolute;
-  top: 6px;
-  left: 0;
+  margin-right: 15px;
+
+  &--messenger {
+    margin-right: 25px;
+  }
 
   @include mobile-max {
-    top: 3px;
+    margin-right: 10px;
+
+    &--messenger {
+      margin-right: 20px;
+    }
+  }
+}
+
+.contacts-phone__phones {
+  &--col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include mobile-max {
+    &--messenger {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
 
 .contacts-phone__phone {
-  @include ubuntu(15, 24, 700);
-  color: $text-color;
-  display: block;
+  @include cadillac(24, 30, 600);
+  color: $gray;
 
   &:hover,
   :focus,
   :active {
-    color: $orange-hover;
+    color: $medium-gray;
   }
+}
+
+.contacts-phone__phone--first {
+  margin-right: 10px;
+}
+
+.contacts-phone__messenger {
+  @include cadillac(24, 24, 600);
+  color: $gray;
 }

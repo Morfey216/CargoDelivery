@@ -1,0 +1,16 @@
+include ../title/title
+include ../contacts-phone/contacts-phone
+include ../contacts-mail/contacts-mail
+include ../contacts-point/contacts-point
+
+section.contacts#contacts
+  +title('Контакты').contacts__title
+  div.contacts__content.container
+    div.contacts__company
+      img(src="img/logo/svn-logo.png", width="375" height="68" alt="SVN Import").contacts__company-logo
+      div.contacts__company-contacts
+        +contacts-phone('messenger').contacts__company-phones
+        +contacts-mail('info@svnimport.com', 'messenger').contacts__company-mail
+        +contacts-point('г. Минск, ул. Чапаева, 3', 'messenger').contacts__company-point
+  div.contacts__map
+    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A58578f1df3d92e7875647cb915c61b98118cc4502668415f1c429cbe2852028e&amp;source=constructor" frameborder="0"></iframe>
