@@ -10,11 +10,6 @@
 // region libs
 // @import "libs/choices/choices";
 @import "libs/swiper/swiper";
-// @import "libs/leaflet/leaflet";
-// @import "libs/leaflet/MarkerCluster";
-// @import "libs/leaflet/MarkerCluster.Default";
-// @import "libs/range-slider/range-slider";
-// @import "libs/simplebar/simplebar";
 //endregion
 
 // region Blocks
@@ -28,18 +23,16 @@
 @import "../blocks/contacts-phone/contacts-phone";
 @import "../blocks/contacts-mail/contacts-mail";
 @import "../blocks/contacts-point/contacts-point";
-// @import "../blocks/menu-nav/menu-nav";
+@import "../blocks/menu-nav/menu-nav";
 // @import "../blocks/header/header";
 @import "../blocks/offer/offer";
-// @import "../blocks/page-footer/page-footer";
 // @import "../blocks/overlay/overlay";
 @import "../blocks/services/services";
 @import "../blocks/advantages/advantages";
-// @import "../blocks/semantic/semantic";
 @import "../blocks/delivery/delivery";
 @import "../blocks/calculation/calculation";
 @import "../blocks/contacts/contacts";
-// @import "../blocks/reviews/reviews";
+@import "../blocks/page-footer/page-footer";
 
 
 //endregion

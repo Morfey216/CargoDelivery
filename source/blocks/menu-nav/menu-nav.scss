@@ -15,7 +15,7 @@
 }
 
 .menu-nav__link {
-  @include ubuntu(15, 25, 700);
+  @include cadillac(18, 24, 600);
   display: block;
   padding: 12px 10px 10px 10px;
   color: $text-color;
@@ -24,7 +24,7 @@
   &:hover,
   :focus,
   :active {
-    color: $orange-hover;
+    color: $blue;
   }
 
   @include tablet-max {
@@ -50,7 +50,7 @@
     position: relative;
 
     .main-nav__link {
-      color: $orange-hover;
+      color: $blue;
     }
   }
 
