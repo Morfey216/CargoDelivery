@@ -1379,10 +1379,6 @@
   });
 
   /* eslint-disable */
-  // import mainSlider from '../blocks/main-slider/main-slider';
-  // import faq from '../blocks/faq/faq';
-  // import askQuestionModal from '../blocks/ask-question-modal/ask-question-modal';
-  // endregion
 
   formInput();
   formTextarea(); // modal();
@@ -1391,10 +1387,7 @@
   // callRequestModal();
 
   header();
-  advantages(); // offer();
-  // mainSlider();
-  // faq();
-  // askQuestionModal();
+  advantages();
 
 }());
 //# sourceMappingURL=main.js.map

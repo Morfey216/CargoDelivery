@@ -27,9 +27,9 @@
     color: $blue;
   }
 
-  @include tablet-max {
-    font-size: 14px;
-  }
+  // @include tablet-max {
+  //   font-size: 14px;
+  // }
 
   @include tablet-medium-max {
     font-size: 14px;
@@ -39,7 +39,6 @@
     padding: 8px 0;
   }
 }
-
 
 .menu-nav__item {
   position: relative;

@@ -23,6 +23,10 @@
   &--col {
     display: flex;
     flex-direction: column;
+
+    .contacts-phone__phone {
+      @include cadillac(18, 24, 600);
+    }
   }
 
   @include mobile-max {

@@ -15,12 +15,6 @@ import formTextarea from '../blocks/form-textarea/form-textarea';
 // import discountModal from '../blocks/discount-modal/discount-modal';
 import header from '../blocks/header/header';
 import advantages from '../blocks/advantages/advantages';
-// import offer from '../blocks/offer/offer';
-// import mainSlider from '../blocks/main-slider/main-slider';
-
-
-// import faq from '../blocks/faq/faq';
-// import askQuestionModal from '../blocks/ask-question-modal/ask-question-modal';
 
 // endregion
 
@@ -32,8 +26,3 @@ formTextarea();
 // callRequestModal();
 header();
 advantages();
-// offer();
-// mainSlider();
-
-// faq();
-// askQuestionModal();

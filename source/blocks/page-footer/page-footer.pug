@@ -73,7 +73,7 @@ mixin page-footer(mod)
         ul.page-footer__social-list
           each social in socialList
             li.page-footer__social-item
-              a(href= social.link).page-footer__social-link
+              a(href= social.link target="_blank").page-footer__social-link
                 img(src="img/social/" + social.icon width= social.w height= social.h alt= social.item).page-footer__icon
                 span.visually-hidden #{social.desc}
     div.page-footer__bottom

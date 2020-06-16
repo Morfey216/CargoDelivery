@@ -1,4 +1,4 @@
 mixin contacts-mail(mail, mod)
   div(class='contacts-mail')&attributes(attributes)
     img(src = 'img/icons/mail-icon.png', width='31', height='31', alt='', class= mod ? 'contacts-point__icon--' + mod : '').contacts-mail__icon
-    a(href = 'mailto:' + mail).contacts-mail__mail #{mail}
+    a(href = 'mailto:' + mail class= mod ? 'contacts-mail__mail--' + mod : '').contacts-mail__mail #{mail}

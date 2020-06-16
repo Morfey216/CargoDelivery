@@ -2,12 +2,13 @@ include ../svg/svg
 include ../link/link
 include ../button/button
 include ../contacts-phone/contacts-phone
+include ../contacts-mail/contacts-mail
 include ../menu-nav/menu-nav
 
 -
   const mainNavList = [
       {
-        item: 'Оффер',
+        item: 'Главная',
         anchor: 'offer',
       },
       {
@@ -15,20 +16,16 @@ include ../menu-nav/menu-nav
         anchor: 'services',
       },
       {
-        item: 'Гарантии',
-        anchor: 'warranty',
+        item: 'Преимущества',
+        anchor: 'advantages',
       },
       {
         item: 'Доставка',
         anchor: 'delivery',
       },
       {
-        item: 'Отзывы',
-        anchor: 'reviews',
-      },
-      {
-        item: 'Вопросы',
-        anchor: 'faq',
+        item: 'Расчет стоимости',
+        anchor: 'calculation',
       },
       {
         item: 'Контакты',
@@ -38,16 +35,16 @@ include ../menu-nav/menu-nav
 
 mixin header
   header.header
-    div.header__main-nav-container.container
-      div.header__logo
-        a.header__logo-link(href="#")
-          img.header__logo-img(src="img/icons/logo.png" width="54" height="62" alt="Логотип")
+    div.container
+      div.header__main-nav-container
+        div.header__logo
+          a.header__logo-link(href="#")
+            img.header__logo-img(src="img/logo/svn-logo.png" width="375" height="68" alt="Логотип")
+        div.header__contacts
+          +contacts-phone('col').header__contacts-phone
+          +contacts-mail('info@svnimport.com', 'col').header__contacts-mail
       div.header__main-nav-wrap
         +menu-nav(mainNavList, 'Главное меню').header__main-nav
-      div.header__contacts
-        +contacts-phone('phone-icon.png', 13, 14).header__contacts-phone
-        +button("Заказать звонок", "orange")(aria-label='Заказать звонок' type="button").header__call-request.js-call-request-open
-
 
     button(type="button").header__toggle
       span.visually-hidden Открыть/закрыть

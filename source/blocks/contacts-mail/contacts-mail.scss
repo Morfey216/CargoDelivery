@@ -28,4 +28,8 @@
   :active {
     color: $dark-gray;
   }
+
+  &--col {
+    @include cadillac(18, 24, 600);
+  }
 }
