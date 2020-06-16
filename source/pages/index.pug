@@ -1,40 +1,22 @@
 include ../blocks/head/head
 include ../blocks/header/header
-//- include ../blocks/feedback-contacts/feedback-contacts
-//- include ../blocks/gauge-request-form/gauge-request-form
-//- include ../blocks/map/map
 include ../blocks/page-footer/page-footer
-include ../blocks/overlay/overlay
-include ../blocks/ask-question-modal/ask-question-modal
-//- include ../blocks/gager-modal/gager-modal
-include ../blocks/call-request-modal/call-request-modal
-//- include ../blocks/discount-modal/discount-modal
 
 doctype html
 html(lang='ru')
-  +head('Доставка товаров из Китая')
+  +head('Доставка товаров из Китая и других стран')
   body
     +header
 
     main
-      h1.visually-hidden Доставка товаров из Китая
+      h1.visually-hidden Доставка товаров из Китая и других стран
 
       include ../blocks/offer/offer
       include ../blocks/services/services
-      include ../blocks/semantic/semantic
+      include ../blocks/advantages/advantages
       include ../blocks/delivery/delivery
-      include ../blocks/reviews/reviews
-      include ../blocks/faq/faq
-      //- +gauge-request-form('Оформите заявку на&nbsp;замер&nbsp;окон')
-      //- include ../blocks/brands/brands
-      //- +map
-
-      //- +feedback-contacts
-    +overlay.js-modal-overlay
-    +ask-question-modal
-    //- +gager-modal
-    +call-request-modal
-    //- +discount-modal
+      include ../blocks/calculation/calculation
+      include ../blocks/contacts/contacts
     +page-footer
 
     include ../blocks/_scripts-block/_scripts-block

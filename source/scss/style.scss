@@ -9,36 +9,28 @@
 
 // region libs
 // @import "libs/choices/choices";
-// @import "libs/swiper/swiper";
-// @import "libs/leaflet/leaflet";
-// @import "libs/leaflet/MarkerCluster";
-// @import "libs/leaflet/MarkerCluster.Default";
-// @import "libs/range-slider/range-slider";
-// @import "libs/simplebar/simplebar";
+@import "libs/swiper/swiper";
 //endregion
 
 // region Blocks
 @import "../blocks/title/title";
-// @import "../blocks/link/link";
+@import "../blocks/pagination-bullet/pagination-bullet";
+@import "../blocks/slider-navigation/slider-navigation";
 @import "../blocks/button/button";
 @import "../blocks/form-input/form-input";
 @import "../blocks/form-textarea/form-textarea";
-@import "../blocks/modal/modal";
-// @import "../blocks/discount-modal/discount-modal";
-// @import "../blocks/gager-modal/gager-modal";
-@import "../blocks/call-request-modal/call-request-modal";
-@import "../blocks/ask-question-modal/ask-question-modal";
 @import "../blocks/contacts-phone/contacts-phone";
+@import "../blocks/contacts-mail/contacts-mail";
+@import "../blocks/contacts-point/contacts-point";
 @import "../blocks/menu-nav/menu-nav";
 @import "../blocks/header/header";
 @import "../blocks/offer/offer";
-@import "../blocks/page-footer/page-footer";
-@import "../blocks/overlay/overlay";
 @import "../blocks/services/services";
-@import "../blocks/semantic/semantic";
+@import "../blocks/advantages/advantages";
 @import "../blocks/delivery/delivery";
-@import "../blocks/reviews/reviews";
-@import "../blocks/faq/faq";
+@import "../blocks/calculation/calculation";
+@import "../blocks/contacts/contacts";
+@import "../blocks/page-footer/page-footer";
 
 
 //endregion

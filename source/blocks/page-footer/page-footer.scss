@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  padding: 65px 15px 55px 15px;
+  padding: 30px 15px 38px 15px;
   max-width: 1170px;
 
   @include tablet-max {
@@ -28,6 +28,8 @@
 .page-footer__nav {
   width: auto;
   margin: 0 auto;
+  padding-bottom: 30px;
+  border-bottom: 1px solid $border-gray;
 
   @include tablet-medium-max {
     ul {
@@ -72,7 +74,12 @@
   padding: 3px 9px;
 
   &:not(:last-child) {
-    border-right: 1px solid $icon-bg-gray;
+    margin-right: 26px;
+    // border-right: 1px solid $border-gray;
+
+    @include mobile-medium-max {
+      margin-right: 10px;
+    }
   }
 }
 
@@ -98,13 +105,13 @@
 
 .page-footer__bottom {
   width: 100%;
-  background-color: $blue;
+  background-color: $gray;
 }
 
 .page-footer__wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: flex-start;
   margin: 0 auto;
   padding: 15px 15px 15px;
@@ -120,7 +127,8 @@
   }
 }
 
+.page-footer__details,
 .page-footer__copyright {
-  @include ubuntu(13, 18, 400);
+  @include cadillac(13, 18, 300);
   color: $white;
 }

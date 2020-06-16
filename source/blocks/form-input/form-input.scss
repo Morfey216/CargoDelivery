@@ -17,12 +17,14 @@
   }
 
   @media (max-width: $screen-md) {
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 20px;
   }
 }
 
 .form-input input {
-  @include ubuntu(17, 26, 300);
+  @include cadillac-b(17, 26);
   width: 100%;
   border: none;
   padding: 0;
@@ -57,7 +59,7 @@
   transition: transform 0.3s, opacity 0.3s;
   pointer-events: none;
 
-  @include ubuntu(17, 26, 300);
+  @include cadillac-b(17, 26);
 
   @media (max-width: $screen-lg) {
     left: 14px;
@@ -152,25 +154,6 @@
 
   .form-input__error {
     background-color: $decor-gray;
-  }
-}
-
-.form-input--small-text {
-  padding: 9px 15px;
-  padding-top: 9px;
-
-  .form-input__label {
-    @include ubuntu(15, 16, 200);
-    left: 15px;
-    width: calc(100% - 30px);
-
-    @include mobile-medium-max {
-      @include ubuntu(14, 15, 200);
-    }
-  }
-
-  input {
-    @include ubuntu(17, 17, 200);
   }
 }
 

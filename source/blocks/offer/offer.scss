@@ -1,92 +1,49 @@
 .offer {
   color: $white;
-  background-color: $blue;
-  background-image: url("../img/train-bg.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
+  background: $blue url("../img/bg/poster.jpg") center no-repeat;
   background-size: cover;
   border: 1px solid $blue;
 }
 
-.offer__header {
-  margin-top: 95px;
+.offer__content {
+  margin-top: 145px;
+  margin-bottom: 275px;
+
+  @include mobile-max {
+    margin-top: 110px;
+    margin-bottom: 150px;
+  }
 }
 
 .offer__title {
   padding: 0;
-  font-size: 60px;
-  line-height: 72px;
+  margin-bottom: 80px;
+  font-size: 48px;
+  line-height: 60px;
   text-align: center;
 
   @include tablet-medium-max {
-    @include ubuntu(42, 42, 500);
+    @include cadillac(36, 46, 600);
   }
 
   @include mobile-max {
-    font-size: 34px;
+    font-size: 22px;
+    line-height: 30px;
   }
 }
 
 .offer__subtitle {
-  @include ubuntu(36, 40, 500);
-  color: $white;
+  @include cadillac(48, 60, 600);
+  color: $gray;
   text-transform: uppercase;
   text-align: center;
 
   @include tablet-medium-max {
-    @include ubuntu(24, 36, 500);
+    @include cadillac(36, 46, 600);
   }
 
   @include mobile-max {
-    @include ubuntu(18, 25, 500);
+    font-size: 22px;
+    line-height: 30px;
   }
-}
-
-.offer__content {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 50px;
-  margin-bottom: 75px;
-
-  @include tablet-medium-max {
-    padding: 30px;
-    padding-top: 50px;
-  }
-
-  @include mobile-max {
-    flex-direction: column;
-    align-items: center;
-    padding-top: 30px;
-  }
-}
-
-.offer__description {
-  @include ubuntu(30, 36, 400);
-  width: 630px;
-  margin-bottom: 25px;
-
-  @include tablet-max {
-    @include ubuntu(26, 36, 400);
-    width: 540px;
-  }
-
-  @include tablet-medium-max {
-    @include ubuntu(26, 36, 400);
-    width: 360px;
-  }
-
-  @include mobile-max {
-    @include ubuntu(20, 24, 400);
-    width: auto;
-    margin-bottom: 45px;
-  }
-}
-
-.offer__contact-form {
-  width: 280px;
-}
-
-.offer__form-submit-button {
-  width: 100%;
 }

@@ -5,34 +5,37 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <title>Доставка товаров из Китая</title>
+  <title>Доставка товаров из Китая и других стран</title>
   <link rel="preload" href="css/style.css" as="style" />
   <link rel="stylesheet" href="css/style.css" media="screen" />
-  <link rel="preload" href="fonts/ubuntu-300-normal.woff2" as="font" crossorigin="anonymous" />
-  <link rel="preload" href="fonts/ubuntu-400-normal.woff2" as="font" crossorigin="anonymous" />
-  <link rel="preload" href="fonts/ubuntu-500-normal.woff2" as="font" crossorigin="anonymous" />
-  <link rel="preload" href="fonts/ubuntu-700-normal.woff2" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="fonts/cadillac-sans-a-light.woff2" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="fonts/cadillac-sans-a-book.woff2" as="font" crossorigin="anonymous" />
+  <link rel="preload" href="fonts/cadillac-sans-a-semibold.woff2" as="font" crossorigin="anonymous" />
 </head>
 
 <body>
   <header class="header">
-    <div class="header__main-nav-container container">
-      <div class="header__logo"><a class="header__logo-link" href="#"><img class="header__logo-img" src="img/icons/logo.png" width="54" height="62" alt="Логотип" /></a></div>
+    <div class="container">
+      <div class="header__main-nav-container">
+        <div class="header__logo"><a class="header__logo-link" href="#"><img class="header__logo-img" src="img/logo/svn-logo.png" width="375" height="68" alt="Логотип" /></a></div>
+        <div class="header__contacts">
+          <div class="contacts-phone header__contacts-phone"><img class="contacts-phone__icon--col contacts-phone__icon" src="img/icons/phone-icon.png" width="31" height="31" alt="" />
+            <div class="contacts-phone__phones--col contacts-phone__phones"><a class="contacts-phone__phone contacts-phone__phone--first" href="tel:+375291932333">+375 29 193 23 33,</a><a class="contacts-phone__phone contacts-phone__phone--second" href="tel:+79639249590">+7 963 924 95 90</a></div>
+          </div>
+          <div class="contacts-mail header__contacts-mail"><img class="contacts-point__icon--col contacts-mail__icon" src="img/icons/mail-icon.png" width="31" height="31" alt="" /><a class="contacts-mail__mail--col contacts-mail__mail" href="mailto:info@svnimport.com">info@svnimport.com</a></div>
+        </div>
+      </div>
       <div class="header__main-nav-wrap">
         <nav class="menu-nav header__main-nav" aria-label="Главное меню">
           <ul class="menu-nav__list">
-            <li class="menu-nav__item"><a class="menu-nav__link" href="#offer">Оффер</a></li>
+            <li class="menu-nav__item"><a class="menu-nav__link" href="#offer">Главная</a></li>
             <li class="menu-nav__item"><a class="menu-nav__link" href="#services">Услуги</a></li>
-            <li class="menu-nav__item"><a class="menu-nav__link" href="#warranty">Гарантии</a></li>
+            <li class="menu-nav__item"><a class="menu-nav__link" href="#advantages">Преимущества</a></li>
             <li class="menu-nav__item"><a class="menu-nav__link" href="#delivery">Доставка</a></li>
-            <li class="menu-nav__item"><a class="menu-nav__link" href="#reviews">Отзывы</a></li>
-            <li class="menu-nav__item"><a class="menu-nav__link" href="#faq">Вопросы</a></li>
+            <li class="menu-nav__item"><a class="menu-nav__link" href="#calculation">Расчет стоимости</a></li>
             <li class="menu-nav__item"><a class="menu-nav__link" href="#contacts">Контакты</a></li>
           </ul>
         </nav>
-      </div>
-      <div class="header__contacts">
-        <div class="contacts-phone header__contacts-phone"><img class="contacts-phone__icon" src="img/icons/phone-icon.png" width="13" height="14" alt="" /><a class="contacts-phone__phone contacts-phone__phone--first" href="tel:+375297777777">+375 (29) 777-77-77</a></div><button class="button button--orange header__call-request js-call-request-open" aria-label="Заказать звонок" type="button"><span>Заказать звонок</span></button>
       </div>
     </div><button class="header__toggle" type="button"><span class="visually-hidden">Открыть/закрыть</span><svg class="header__toggle-svg-open" width="32" height="23">
         <use xlink:href="img/sprite.svg#burger"></use>
@@ -43,238 +46,208 @@
     <div class="header__overlay"></div>
   </header>
   <main>
-    <h1 class="visually-hidden">Доставка товаров из Китая</h1>
+    <h1 class="visually-hidden">Доставка товаров из Китая и других стран</h1>
     <section class="offer" id="offer">
       <div class="container">
-        <div class="offer__header">
-          <h2 class="title title--white offer__title">Доставка товара из Китая</h2>
-          <p class="offer__subtitle">Развивай свой бизнес вместе с СВН групп! <br>Мы поможем сэкономить Ваши деньги!</p>
-        </div>
         <div class="offer__content">
-          <p class="offer__description">Мы предлагаем комплексный сервис: поиск, проверка и доставка товаров оптом с фабрик Китая до вашего склада. Производство под заказ.</p>
-          <form class="offer__contact-form js-ocf" action="#" method="post"><label class="form-input form-input--marker offer__form-input js-ocf-name"><input class="js-form-input" placeholder=" " id="ocf-name" type="text" required><span class="form-input__label">Ваше имя</span><span class="form-input__error">Введите имя</span><svg width="15" height="15">
-                <use xlink:href="img/sprite.svg#warning"></use>
-              </svg><img class="form-input__marker" src="img/icons/name-icon.png" width="13" height="15" alt=""></label><label class="form-input form-input--marker offer__form-input js-ocf-email"><input class="js-form-input" placeholder=" " id="ocf-email" type="email" required><span class="form-input__label">Ваша почта</span><span class="form-input__error">Введите E-mail</span><svg width="15" height="15">
-                <use xlink:href="img/sprite.svg#warning"></use>
-              </svg><img class="form-input__marker" src="img/icons/email-icon.png" width="16" height="13" alt=""></label><label class="form-input form-input--marker offer__form-input js-ocf-phone"><input class="js-form-input" placeholder=" " id="ocf-phone" type="tel" required><span class="form-input__label">+375 ( _ _ ) _ _ _ – _ _ – _ _</span><span class="form-input__error">Неверный номер</span><svg width="15" height="15">
-                <use xlink:href="img/sprite.svg#warning"></use>
-              </svg><img class="form-input__marker" src="img/icons/phone-icon.png" width="13" height="14" alt=""></label><button class="button button--orange offer__form-submit-button js-ocf-submit" type="submit"><span>Отправить</span></button></form>
+          <h2 class="title title--gray offer__title">Поиск, производство,<br>проверка, сертификация,<br>таможенное оформление и доставка<br>товаров с фабрик Китая<br>и других зарубежных фабрик<br>до Вашего склада!</h2>
+            <p class="offer__subtitle">Мы экономим Ваши Сбережения,<br>Время и Нервы, занимаясь импортом<br>вместо Вас!</p>
         </div>
       </div>
     </section>
-    <section class="services container" id="services">
-      <h2 class="title title--section services__title">Наши услуги</h2>
-      <ul class="services__list">
-        <li class="services__service-item">
-          <div class="services__service-img"><img src="img/icons/cargo-search.png" width="59" height="52" alt=""></div>
-          <h3>Поиск товара, производителей в Китае</h3>
-        </li>
-        <li class="services__service-item">
-          <div class="services__service-img"><img src="img/icons/verification.png" width="52" height="53" alt=""></div>
-          <h3>Проверка товаров и фабрик в Китае</h3>
-        </li>
-        <li class="services__service-item">
-          <div class="services__service-img"><img src="img/icons/sample-cargo.png" width="44" height="50" alt=""></div>
-          <h3>Доставка образцов</h3>
-        </li>
-        <li class="services__service-item">
-          <div class="services__service-img"><img src="img/icons/cargo-2.png" width="50" height="57" alt=""></div>
-          <h3>Карго-доставка товаров из Китая</h3>
-        </li>
-        <li class="services__service-item">
-          <div class="services__service-img"><img src="img/icons/customs-registration.png" width="59" height="60" alt=""></div>
-          <h3>Таможенное оформление в Беларуси</h3>
-        </li>
-        <li class="services__service-item">
-          <div class="services__service-img"><img src="img/icons/certificate.png" width="62" height="58" alt=""></div>
-          <h3>Сертификация продукции в Беларуси</h3>
-        </li>
-        <li class="services__service-item">
-          <div class="services__service-img"><img src="img/icons/money.png" width="63" height="67" alt=""></div>
-          <h3>Перевод денег в Китай</h3>
-        </li>
-        <li class="services__service-item">
-          <div class="services__service-img"><img src="img/icons/translate.png" width="57" height="64" alt=""></div>
-          <h3>Переводчик с китайского</h3>
-        </li>
-        <li class="services__service-item">
-          <div class="services__service-img"><img src="img/icons/fabrica.png" width="52" height="52" alt=""></div>
-          <h3>Собственное производство в Китае</h3>
-        </li>
-        <li class="services__service-item">
-          <div class="services__service-img"><img src="img/icons/order.png" width="56" height="41" alt=""></div>
-          <h3>Заказ товаров для Amazon</h3>
-        </li>
-      </ul>
-    </section>
-    <section class="semantic" id="warranty">
+    <section class="services" id="services">
+      <h2 class="title services__title">Услуги</h2>
       <div class="container">
-        <div class="semantic__content">
-          <h2 class="title title--white">Гарантии</h2>
-          <p class="semantic__text">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the ore recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"</p>
+        <ul class="services__list">
+          <li class="services__service-item">
+            <div class="services__service-img"><img src="img/services/search.png" width="61" height="61" alt=""></div>
+            <h3 class="services__item-title">Поиск и проверка товаров с фабрик Китая и других зарубежных фабрик</h3>
+          </li>
+          <li class="services__service-item">
+            <div class="services__service-img"><img src="img/services/manufacture.png" width="60" height="60" alt=""></div>
+            <h3 class="services__item-title">Производство собственного продукта по требуемым параметрам</h3>
+          </li>
+          <li class="services__service-item">
+            <div class="services__service-img"><img src="img/services/samples.png" width="61" height="71" alt=""></div>
+            <h3 class="services__item-title">Заказ и получение образцов товара</h3>
+          </li>
+          <li class="services__service-item">
+            <div class="services__service-img"><img src="img/services/certification.png" width="61" height="61" alt=""></div>
+            <h3 class="services__item-title">Сертификация</h3>
+          </li>
+          <li class="services__service-item">
+            <div class="services__service-img"><img src="img/services/customs.png" width="46" height="66" alt=""></div>
+            <h3 class="services__item-title">Таможенное оформление</h3>
+          </li>
+          <li class="services__service-item">
+            <div class="services__service-img"><img src="img/services/delivery.png" width="61" height="60" alt=""></div>
+            <h3 class="services__item-title">Доставка от фабрики до склада клиента</h3>
+          </li>
+          <li class="services__service-item">
+            <div class="services__service-img"><img src="img/services/amazon-delivery.png" width="62" height="57" alt=""></div>
+            <h3 class="services__item-title">Доставка товаров на Amazon</h3>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="advantages" id="advantages">
+      <div class="container">
+        <h2 class="title title--white advantages__title">Преимущества</h2>
+        <div class="advantages__container">
+          <div class="slider-navigation advantages__slider-navigation"><button class="slider-navigation__btn slider-navigation__btn--prev advantages__navigation-btn-prev" type="button"><span class="visually-hidden">Назад</span><svg class="slider-navigation__icon slider-navigation__icon--prev" width="7" height="4">
+                <use xlink:href="img/sprite.svg#arrow-short-down"></use>
+              </svg></button><button class="slider-navigation__btn slider-navigation__btn--next advantages__navigation-btn-next" type="button"><span class="visually-hidden">Вперед</span><svg class="slider-navigation__icon slider-navigation__icon--next" width="7" height="4">
+                <use xlink:href="img/sprite.svg#arrow-short-down"></use>
+              </svg></button></div>
+          <div class="advantages__wrapper">
+            <div class="advantages__slide">
+              <div class="advantages__item">
+                <div class="advantages__item-img"><img src="img/advantages/24in7.png" width="200" height="200" alt="Поддержка 24/7"></div>
+                <div class="advantages__item-content">
+                  <h3 class="advantages__item-title">Поддержка 24/7</h3>
+                  <p class="advantages__item-description">Клиентская поддержка, полный контроль на всех этапах, оперативное решение вопросов.</p>
+                </div>
+              </div>
+            </div>
+            <div class="advantages__slide">
+              <div class="advantages__item">
+                <div class="advantages__item-img"><img src="img/advantages/quality.png" width="200" height="200" alt="Контроль качества"></div>
+                <div class="advantages__item-content">
+                  <h3 class="advantages__item-title">Контроль качества</h3>
+                  <p class="advantages__item-description">Складские комплексы с инспекторами по качеству в США, Китае, Европе, России и Беларуси. Проверка по характеристикам и качеству, подготовка и упаковка товара по требованиям перед отправкой.</p>
+                </div>
+              </div>
+            </div>
+            <div class="advantages__slide">
+              <div class="advantages__item">
+                <div class="advantages__item-img"><img src="img/advantages/warranty.png" width="200" height="200" alt="Гарантия безопасности"></div>
+                <div class="advantages__item-content">
+                  <h3 class="advantages__item-title">Гарантия безопасности</h3>
+                  <p class="advantages__item-description">Юридическая помощь при заключении контракта с производителем. Помощь с безопасной оплатой на фабрики. Полное сопровождение сделки. Страхование и отслеживание груза.</p>
+                </div>
+              </div>
+            </div>
+            <div class="advantages__slide">
+              <div class="advantages__item">
+                <div class="advantages__item-img"><img src="img/advantages/prof.png" width="200" height="200" alt="Профессионализм"></div>
+                <div class="advantages__item-content">
+                  <h3 class="advantages__item-title">Профессионализм</h3>
+                  <p class="advantages__item-description">Большой опыт работы с ТНВЭД, оптимизация ставки пошлины, опытные декларанты, множество готовых сертификатов, сертификация новых продуктов, оперативное таможенное оформление.</p>
+                </div>
+              </div>
+            </div>
+            <div class="advantages__slide">
+              <div class="advantages__item">
+                <div class="advantages__item-img"><img src="img/advantages/customer.png" width="200" height="200" alt="Клиентоориентированность"></div>
+                <div class="advantages__item-content">
+                  <h3 class="advantages__item-title">Клиентоориентированность</h3>
+                  <p class="advantages__item-description">Работаем с физическими и юридическими лицами, ищем и доставляем любой товар по всему миру. Составляем максимально бюджетный маршрут. Для нас не существует безвыходных ситуаций.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="advantages__pagination"></div>
         </div>
       </div>
     </section>
     <section class="delivery" id="delivery">
-      <h2 class="title title--section-nodecor delivery__title">Варианты доставки</h2>
-      <ul class="delivery__list container">
-        <li class="delivery__item">
-          <div class="delivery__img"><img src="img/icons/airplane.png" width="61" height="61" alt=""></div>
-          <h3>Авиадоставка грузов</h3>
-        </li>
-        <li class="delivery__item">
-          <div class="delivery__img"><img src="img/icons/car.png" width="49" height="39" alt=""></div>
-          <h3>Автодоставка грузов</h3>
-        </li>
-        <li class="delivery__item">
-          <div class="delivery__img"><img src="img/icons/train.png" width="53" height="54" alt=""></div>
-          <h3>ЖД доставка грузов</h3>
-        </li>
-        <li class="delivery__item">
-          <div class="delivery__img"><img src="img/icons/ship.png" width="60" height="52" alt=""></div>
-          <h3>Доставка морем</h3>
-        </li>
-        <li class="delivery__item">
-          <div class="delivery__img"><img src="img/icons/cargo.png" width="58" height="56" alt=""></div>
-          <h3>Контейнерные перевозки</h3>
-        </li>
-        <li class="delivery__item">
-          <div class="delivery__img"><img src="img/icons/containers.png" width="50" height="45" alt=""></div>
-          <h3>Сборные грузы</h3>
-        </li>
-        <li class="delivery__item">
-          <div class="delivery__img"><img src="img/icons/fast-delivery.png" width="72" height="73" alt=""></div>
-          <h3>Экспресс доставка грузов</h3>
-        </li>
-      </ul>
-    </section>
-    <section class="reviews" id="reviews">
-      <h2 class="title title--white reviews__title">Отзывы</h2>
+      <h2 class="title title--gray delivery__title">Доставляем по всему миру</h2>
       <div class="container">
-        <div class="reviews__list">
-          <div class="reviews__review">
-            <div class="reviews__review-avatar-container"><img class="reviews__review-avatar" src="img/avatar/w-man.png" width="128" height="128" alt="Аватар"></div>
-            <div class="reviews__review-content">
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make. a type specimen book, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-              <div class="reviews__review-author"><span class="reviews__author-name">Darwin Michle</span><span class="reviews__author-position">Project Manager</span></div>
+        <ul class="delivery__list">
+          <li class="delivery__item">
+            <div class="delivery__img"><img src="img/delivery/airplane.png" width="63" height="61" alt=""></div>
+            <h3 class="delivery__item-title">Авиадоставки грузов</h3>
+          </li>
+          <li class="delivery__item">
+            <div class="delivery__img"><img src="img/delivery/car.png" width="66" height="68" alt=""></div>
+            <h3 class="delivery__item-title">Автомобильные грузоперевозки</h3>
+          </li>
+          <li class="delivery__item">
+            <div class="delivery__img"><img src="img/delivery/train.png" width="62" height="64" alt=""></div>
+            <h3 class="delivery__item-title">Железнодорожные грузоперевозки</h3>
+          </li>
+          <li class="delivery__item">
+            <div class="delivery__img"><img src="img/delivery/ship.png" width="65" height="62" alt=""></div>
+            <h3 class="delivery__item-title">Морские грузоперевозки</h3>
+          </li>
+          <li class="delivery__item">
+            <div class="delivery__img"><img src="img/delivery/containers.png" width="65" height="63" alt=""></div>
+            <h3 class="delivery__item-title">Сборные грузы</h3>
+          </li>
+          <li class="delivery__item">
+            <div class="delivery__img"><img src="img/delivery/quick.png" width="76" height="62" alt=""></div>
+            <h3 class="delivery__item-title">Экспресс доставка</h3>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="calculation" id="calculation">
+      <h2 class="title calculation__title">Расчет стоимости товара</h2>
+      <p class="calculation__subtitle">Отправьте нам данные и мы расчитаем стоимость</p>
+      <div class="container">
+        <form class="calculation__contact-form js-ccf" action="#" method="post"><label class="form-input calculation__form-input js-ccf-name"><input class="js-form-input" placeholder=" " id="ccf-name" type="text" name="name" required><span class="form-input__label">Ваше имя</span><span class="form-input__error">Введите имя</span><svg width="15" height="15">
+              <use xlink:href="img/sprite.svg#warning"></use>
+            </svg></label><label class="form-input calculation__form-input js-ccf-email"><input class="js-form-input" placeholder=" " id="ccf-email" type="email" name="email" required><span class="form-input__label">Ваша почта</span><span class="form-input__error">Введите E-mail</span><svg width="15" height="15">
+              <use xlink:href="img/sprite.svg#warning"></use>
+            </svg></label><label class="form-input calculation__form-input js-ccf-phone"><input class="js-form-input" placeholder=" " id="ccf-phone" type="tel" name="phone" required><span class="form-input__label">+375 ( _ _ ) _ _ _ – _ _ – _ _</span><span class="form-input__error">Неверный номер</span><svg width="15" height="15">
+              <use xlink:href="img/sprite.svg#warning"></use>
+            </svg></label><label class="form-input calculation__form-input js-ccf-country"><input class="js-form-input" placeholder=" " id="ccf-country" type="text" name="country" required><span class="form-input__label">Страна</span><span class="form-input__error">Введите страну</span><svg width="15" height="15">
+              <use xlink:href="img/sprite.svg#warning"></use>
+            </svg></label><label class="form-input calculation__form-input js-ccf-city"><input class="js-form-input" placeholder=" " id="ccf-city" type="text" name="city" required><span class="form-input__label">Город</span><span class="form-input__error">Введите горорд</span><svg width="15" height="15">
+              <use xlink:href="img/sprite.svg#warning"></use>
+            </svg></label><label class="form-input calculation__form-input js-ccf-sending-point"><input class="js-form-input" placeholder=" " id="ccf-sending-point" type="text" name="sending-point" required><span class="form-input__label">Из какой страны товар</span><span class="form-input__error">Укажите, из какой страны товар</span><svg width="15" height="15">
+              <use xlink:href="img/sprite.svg#warning"></use>
+            </svg></label><label class="form-textarea calculation__form-textarea js-ccf-description"><textarea class="js-form-textarea" placeholder=" " id="ccf-description" name="description" required></textarea><span class="form-textarea__label">Описание товара</span><span class="form-textarea__error">Укажите описание товара</span><svg width="15" height="15">
+              <use xlink:href="img/sprite.svg#warning"></use>
+            </svg></label><button class="button button--orange calculation__form-submit-button js-ccf-submit" type="submit"><span>Отправить</span></button></form>
+      </div>
+    </section>
+    <section class="contacts" id="contacts">
+      <h2 class="title contacts__title">Контакты</h2>
+      <div class="contacts__content container">
+        <div class="contacts__company"><img class="contacts__company-logo" src="img/logo/svn-logo.png" width="375" height="68" alt="SVN Import">
+          <div class="contacts__company-contacts">
+            <div class="contacts-phone contacts__company-phones"><img class="contacts-phone__icon--messenger contacts-phone__icon" src="img/icons/phone-icon.png" width="31" height="31" alt="">
+              <div class="contacts-phone__phones--messenger contacts-phone__phones"><a class="contacts-phone__phone contacts-phone__phone--first" href="tel:+375291932333">+375 29 193 23 33,</a><a class="contacts-phone__phone contacts-phone__phone--second" href="tel:+79639249590">+7 963 924 95 90</a>
+                <p class="contacts-phone__messenger">(whatsapp, telegram, viber)</p>
+              </div>
             </div>
-          </div>
-          <div class="reviews__review">
-            <div class="reviews__review-avatar-container"><img class="reviews__review-avatar" src="img/avatar/unnamed-w.png" width="128" height="128" alt="Аватар"></div>
-            <div class="reviews__review-content">
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make. a type specimen book, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-              <div class="reviews__review-author"><span class="reviews__author-name">Darwin Michle</span><span class="reviews__author-position">Manager</span></div>
-            </div>
-          </div>
-          <div class="reviews__review">
-            <div class="reviews__review-avatar-container"><img class="reviews__review-avatar" src="img/avatar/unnamed-w.png" width="128" height="128" alt="Аватар"></div>
-            <div class="reviews__review-content">
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make. a type specimen book, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-              <div class="reviews__review-author"><span class="reviews__author-name">Darwin Michle</span><span class="reviews__author-position">Creative Directior</span></div>
-            </div>
-          </div>
-          <div class="reviews__review">
-            <div class="reviews__review-avatar-container"><img class="reviews__review-avatar" src="img/avatar/w-man.png" width="128" height="128" alt="Аватар"></div>
-            <div class="reviews__review-content">
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make. a type specimen book.</p>
-              <div class="reviews__review-author"><span class="reviews__author-name">Darwin Michle</span><span class="reviews__author-position">Project Manager</span></div>
+            <div class="contacts-mail contacts__company-mail"><img class="contacts-point__icon--messenger contacts-mail__icon" src="img/icons/mail-icon.png" width="31" height="31" alt=""><a class="contacts-mail__mail--messenger contacts-mail__mail" href="mailto:info@svnimport.com">info@svnimport.com</a></div>
+            <div class="contacts-point contacts__company-point"><img class="contacts-point__icon--messenger contacts-point__icon" src="img/icons/point-icon.png" width="31" height="31" alt="">
+              <p class="contacts-point__point">220034, г. Минск,<br>ул. Чапаева, 3, пом. 36 блок 55</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section class="faq" id="faq">
-      <div class="faq__wrapper">
-        <h2 class="title title--section faq__title">Часто задаваемые вопросы</h2>
-        <ul class="faq__questions">
-          <li class="faq__question js-faq-control">
-            <div class="faq__question-title"><span></span>
-              <p>Здравствуйте, скажите, пожалуйста, какой срок доставки?</p>
-            </div>
-            <div class="faq__answer">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas mi a turpis consequat dignissim. Quisque eros eros, semper at pretium sed, fringilla sit amet ipsum. Fusce in nunc fermentum tortor tincidunt fringilla. Ut ut nulla quis erat gravida dictum vel vel metus. Cras placerat dictum eleifend.</p>
-            </div>
-          </li>
-          <li class="faq__question js-faq-control">
-            <div class="faq__question-title"><span></span>
-              <p>Добрый день! В чем принципиальное отличие вашей фирмы от конкурентов?</p>
-            </div>
-            <div class="faq__answer">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas mi a turpis consequat dignissim. Quisque eros eros, semper at pretium sed, fringilla sit amet ipsum. Fusce in nunc fermentum tortor tincidunt fringilla. Ut ut nulla quis erat gravida dictum vel vel metus. Cras placerat dictum eleifend.</p>
-            </div>
-          </li>
-          <li class="faq__question js-faq-control">
-            <div class="faq__question-title"><span></span>
-              <p>Проконсультируйте пожалуйста, по стоимости услуг и способам оплаты?</p>
-            </div>
-            <div class="faq__answer">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas mi a turpis consequat dignissim. Quisque eros eros, semper at pretium sed, fringilla sit amet ipsum. Fusce in nunc fermentum tortor tincidunt fringilla. Ut ut nulla quis erat gravida dictum vel vel metus. Cras placerat dictum eleifend.</p>
-            </div>
-          </li>
-          <li class="faq__question js-faq-control">
-            <div class="faq__question-title"><span></span>
-              <p>Возможно ли доставка в районные центры?</p>
-            </div>
-            <div class="faq__answer">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas egestas mi a turpis consequat dignissim. Quisque eros eros, semper at pretium sed, fringilla sit amet ipsum. Fusce in nunc fermentum tortor tincidunt fringilla. Ut ut nulla quis erat gravida dictum vel vel metus. Cras placerat dictum eleifend.</p>
-            </div>
-          </li>
-        </ul><a class="faq__ask-question-link js-ask-question-open" href="#">Задать вопрос</a>
-      </div>
+      <div class="contacts__map"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A58578f1df3d92e7875647cb915c61b98118cc4502668415f1c429cbe2852028e&amp;source=constructor" frameborder="0"></iframe></div>
     </section>
   </main>
-  <div class="overlay js-modal-overlay"></div>
-  <section class="modal js-modal ask-question-modal" id="ask-question-modal"><button class="modal__close js-modal-close" type="button"><span class="visually-hidden">Закрыть</span><svg class="modal__close-svg" width="16" height="16">
-        <use xlink:href="img/sprite.svg#cross"></use>
-      </svg></button>
-    <h2>Задать вопрос</h2>
-    <form class="ask-question-modal__form js-aqmf" action="#" method="post"><label class="form-input ask-question-modal__input js-aqmf-validate js-aqmf-name"><input class="js-form-input" placeholder=" " id="aqmf-name" required><span class="form-input__label">Введите имя</span><span class="form-input__error">Введите имя</span><svg width="15" height="15">
-          <use xlink:href="img/sprite.svg#warning"></use>
-        </svg></label><label class="form-input ask-question-modal__input js-aqmf-validate js-aqmf-phone"><input class="js-form-input" placeholder=" " id="aqmf-phone" type="tel" required><span class="form-input__label">+375 ( _ _ ) _ _ _ – _ _ – _ _</span><span class="form-input__error">Неверный номер</span><svg width="15" height="15">
-          <use xlink:href="img/sprite.svg#warning"></use>
-        </svg></label><label class="form-textarea ask-question-modal__input ask-question-modal__input--textarea js-aqmf-validate js-aqmf-textarea"><textarea class="js-form-textarea" placeholder=" " id="aqmf-message" required="required"></textarea><span class="form-textarea__label">Текст вопроса</span><span class="form-textarea__error">Напишите вопрос</span><svg width="15" height="15">
-          <use xlink:href="img/sprite.svg#warning"></use>
-        </svg></label>
-      <footer class="ask-question-modal__footer"><button class="button button--orange ask-question-modal__submit js-aqmf-submit" type="submit"><span>Отправить</span></button></footer>
-    </form>
-  </section>
-  <section class="modal js-modal call-request-modal" id="call-request-modal"><button class="modal__close js-modal-close" type="button"><span class="visually-hidden">Закрыть</span><svg class="modal__close-svg" width="16" height="16">
-        <use xlink:href="img/sprite.svg#cross"></use>
-      </svg></button>
-    <h2>Заказать звонок</h2>
-    <form class="call-request-modal__form js-crmf" action="#" method="post"><label class="form-input call-request-modal__input js-crmf-phone"><input class="js-form-input" placeholder=" " id="crmf-phone" type="tel" required><span class="form-input__label">+375 ( _ _ ) _ _ _ – _ _ – _ _</span><span class="form-input__error">Неверный номер</span><svg width="15" height="15">
-          <use xlink:href="img/sprite.svg#warning"></use>
-        </svg></label><button class="button button--orange call-request-modal__submit-button js-crmf-submit" type="submit"><span>Отправить</span></button>
-      <p class="call-request-modal__privacy">Нажимая Отправить, Вы&nbsp;даете согласие на&nbsp;обработку
-        <a class="link link--under-solid call-request-modal__privacy-link" href="#">персональных данных</a></p>
-    </form>
-  </section>
   <footer class="page-footer">
     <div class="page-footer__top">
       <nav class="menu-nav page-footer__nav" aria-label="Дополнительное меню">
         <ul class="menu-nav__list">
-          <li class="menu-nav__item"><a class="menu-nav__link" href="#offer">Оффер</a></li>
+          <li class="menu-nav__item"><a class="menu-nav__link" href="#offer">Главная</a></li>
           <li class="menu-nav__item"><a class="menu-nav__link" href="#services">Услуги</a></li>
-          <li class="menu-nav__item"><a class="menu-nav__link" href="#warranty">Гарантии</a></li>
+          <li class="menu-nav__item"><a class="menu-nav__link" href="#advantages">Преимущества</a></li>
           <li class="menu-nav__item"><a class="menu-nav__link" href="#delivery">Доставка</a></li>
-          <li class="menu-nav__item"><a class="menu-nav__link" href="#reviews">Отзывы</a></li>
-          <li class="menu-nav__item"><a class="menu-nav__link" href="#faq">Вопросы</a></li>
+          <li class="menu-nav__item"><a class="menu-nav__link" href="#calculation">Расчет стоимости</a></li>
           <li class="menu-nav__item"><a class="menu-nav__link" href="#contacts">Контакты</a></li>
         </ul>
       </nav>
-      <div class="contacts-phone footer__contacts-phone"><img class="contacts-phone__icon" src="img/icons/phone-icon.png" width="13" height="14" alt="" /><a class="contacts-phone__phone contacts-phone__phone--first" href="tel:+375297777777">+375 (29) 777-77-77</a></div>
       <div class="page-footer__social">
         <h2 class="visually-hidden">Мы в соцсетях</h2>
         <ul class="page-footer__social-list">
-          <li class="page-footer__social-item"><a class="page-footer__social-link" href="#"><img class="page-footer__icon" src="img/icons/vk-yellow.png" width="26" height="16" alt="Логотип Вконтакте" /><span class="visually-hidden">Следите за новостями во Вконтакте</span></a></li>
-          <li class="page-footer__social-item"><a class="page-footer__social-link" href="#"><img class="page-footer__icon" src="img/icons/youtube-yellow.png" width="26" height="18" alt="Логотип YouTube" /><span class="visually-hidden">Подписывайтесь на наш YouTube-канал</span></a></li>
-          <li class="page-footer__social-item"><a class="page-footer__social-link" href="#"><img class="page-footer__icon" src="img/icons/facebook-yellow.png" width="19" height="19" alt="Логотип Facebook" /><span class="visually-hidden">Следите за новостями в Facebook</span></a></li>
+          <li class="page-footer__social-item"><a class="page-footer__social-link" href="https://www.facebook.com/Svnimportcom-104017764688816" target="_blank"><img class="page-footer__icon" src="img/social/facebook.png" width="27" height="27" alt="Facebook" /><span class="visually-hidden">Следите за новостями в Facebook</span></a></li>
+          <li class="page-footer__social-item"><a class="page-footer__social-link" href="https://www.instagram.com/svnimport/" target="_blank"><img class="page-footer__icon" src="img/social/insta.png" width="27" height="27" alt="Instagram" /><span class="visually-hidden">Следите за новостями в Instagram</span></a></li>
+          <li class="page-footer__social-item"><a class="page-footer__social-link" href="https://vk.com/svnimport" target="_blank"><img class="page-footer__icon" src="img/social/vk.png" width="45" height="27" alt="Вконтакте" /><span class="visually-hidden">Следите за новостями во Вконтакте</span></a></li>
+          <li class="page-footer__social-item"><a class="page-footer__social-link" href="https://www.youtube.com/channel/UCH0y-syRlKW_XS19-b5sayA/featured" target="_blank"><img class="page-footer__icon" src="img/social/youtube.png" width="39" height="27" alt="YouTube" /><span class="visually-hidden">Подписывайтесь на наш YouTube-канал</span></a></li>
         </ul>
       </div>
     </div>
     <div class="page-footer__bottom">
       <div class="page-footer__wrapper">
-        <p class="page-footer__copyright">All contents © copyright 2020</p>
+        <p class="page-footer__details">ООО "СВН импорт", УНП 193430086</p>
+        <p class="page-footer__copyright">All contents © Copyright 2020</p>
       </div>
     </div>
   </footer>

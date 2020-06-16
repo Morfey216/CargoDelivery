@@ -24,15 +24,25 @@
 .header__main-nav-container {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid $border-gray;
 
   @include tablet-medium-max {
     width: 570px;
+    padding: 0;
+    margin: 0;
     margin-right: auto;
-    margin-left: 0;
+    border-bottom: none;
   }
 
   @include mobile-max {
     width: 500px;
+  }
+
+  @include mobile-medium-max {
+    display: block;
+    width: 100%;
   }
 }
 
@@ -41,7 +51,12 @@
   display: flex;
   align-items: center;
 
+  @include tablet-medium-max {
+    width: 260px;
+  }
+
   @include mobile-max {
+    width: 260px;
     margin-right: 0;
   }
 }
@@ -55,20 +70,35 @@
 }
 
 .header__contacts {
-  width: 170px;
-  margin-left: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 600px;
 
-  @include tablet-medium-max {
-    width: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 15px;
+  @include tablet-max {
+    width: 450px;
   }
 
-  @include mobile-max {
+  @include tablet-medium-max {
     display: block;
+    width: 200px;
     margin-left: 0;
+
+    .header__contacts-phone a,
+    .header__contacts-mail a {
+      @include cadillac(16, 22, 600);
+    }
+  }
+
+  @include mobile-medium-max {
+    width: 185px;
+    margin-top: 15px;
+  }
+}
+
+.header__contacts-mail {
+  @include mobile-medium-max {
+    display: none;
   }
 }
 
@@ -179,7 +209,7 @@
 
       padding-bottom: 17px;
 
-      @include ubuntu(14, 20, 700);
+      @include cadillac(14, 20, 600);
 
       &::before {
         content: "";
@@ -207,7 +237,7 @@
 
     .nav-window__item:hover {
       .nav-window__link {
-        @include ubuntu(13, 20, 500);
+        @include cadillac-b(13, 20);
       }
 
       .nav-window__sub {
@@ -226,7 +256,7 @@
       padding-bottom: 14px;
       padding-right: 13px;
 
-      @include ubuntu(13, 20, 400);
+      @include cadillac-b(13, 20);
     }
 
     .nav-window__sub {
@@ -241,12 +271,12 @@
       padding-bottom: 8px;
       padding-left: 19px;
 
-      @include ubuntu(13, 20, 400);
+      @include cadillac-b(13, 20);
     }
 
     .nav-window__sub-item:hover {
       .nav-window__sub-link {
-        @include ubuntu(13, 20, 400);
+        @include cadillac-b(13, 20);
       }
 
       .nav-window__sub-preview {
@@ -316,7 +346,7 @@
       padding-top: 7px;
       padding-bottom: 7px;
 
-      @include ubuntu(14, 20, 500);
+      @include cadillac-b(14, 20);
 
       &::before {
         content: "";

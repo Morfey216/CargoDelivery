@@ -1,8 +1,15 @@
-@mixin ubuntu($size, $height, $weight) {
-  font-family: $ubuntu;
+@mixin cadillac($size, $height, $weight) {
+  font-family: $cadillac;
   font-size: $size + px;
   line-height: $height + px;
   font-weight: $weight;
+}
+
+@mixin cadillac-b($size, $height) {
+  font-family: $cadillac-b;
+  font-size: $size + px;
+  line-height: $height + px;
+  font-weight: normal;
 }
 
 @mixin list-reset {

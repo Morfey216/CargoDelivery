@@ -1,0 +1,35 @@
+.contacts-mail {
+  display: flex;
+  align-items: center;
+}
+
+.contacts-mail__icon {
+  margin-right: 15px;
+
+  &--messenger {
+    margin-right: 25px;
+  }
+
+  @include mobile-max {
+    margin-right: 10px;
+
+    &--messenger {
+      margin-right: 20px;
+    }
+  }
+}
+
+.contacts-mail__mail {
+  @include cadillac(24, 30, 600);
+  color: $gray;
+
+  &:hover,
+  :focus,
+  :active {
+    color: $dark-gray;
+  }
+
+  &--col {
+    @include cadillac(18, 24, 600);
+  }
+}

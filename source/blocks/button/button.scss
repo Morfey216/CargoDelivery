@@ -5,11 +5,13 @@
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
+  color: $white;
+  background-color: $blue;
   border: none;
   outline: none;
   border-radius: 2px;
 
-  @include ubuntu(16, 18, 700);
+  @include cadillac(18, 18, 600);
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -18,110 +20,9 @@
     font-size: 12px;
   }
 
-  &--transparent {
-    color: $orange;
-    background-color: transparent;
-    border: 1px solid $light-gray;
-    transition: border-color 0.3s;
-
-    &:hover,
-    &:focus {
-      border-color: $gray;
-    }
-
-    &:active {
-      opacity: 0.7;
-    }
-
-    &:disabled {
-      color: $gray;
-      border: 1px solid $gray;
-    }
-  }
-
-  &--orange {
-    color: $white;
-    text-decoration: none;
-    text-align: center;
-    background-color: $orange;
-    transition: background-color 0.3s;
-
-    &:hover,
-    &:focus {
-      color: $white;
-      background-color: $orange-hover;
-    }
-
-    &:active {
-      color: $white;
-      background-color: $orange-active;
-    }
-
-    &:disabled {
-      background-color: $gray-disabled;
-    }
-  }
-
-  &--green {
-    padding: 18px 14px;
-    color: $white;
-    text-decoration: none;
-    text-align: center;
-    background-color: $green;
-    transition: background-color 0.3s;
-
-    &:hover,
-    &:focus {
-      color: $white;
-      background-color: $green-hover;
-    }
-
-    &:active {
-      color: $white;
-      background-color: $green-active;
-    }
-
-    &:disabled {
-      background-color: $gray-disabled;
-    }
-  }
-
-  &--control {
-    @include ubuntu(18, 20, 500);
-    text-transform: uppercase;
-    color: $light-gray;
-    margin: 0 6px;
-    padding: 3px 0;
-    display: inline-block;
-
-    border: none;
-    border-radius: 0;
-    background: transparent;
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: $gray;
-    }
-
-    @include tablet-max {
-      font-size: 16px;
-    }
-
-    @include mobile-max {
-      font-size: 14px;
-    }
-  }
-
-  &--control.active {
-    cursor: auto;
-    color: $gray;
-    border-bottom: 4px solid $green;
-    outline: transparent;
-
-    @include mobile-max {
-      border-bottom-width: 3px;
-    }
+  &:hover,
+  &:focus {
+    background-color: $dark-blue;
   }
 }
 

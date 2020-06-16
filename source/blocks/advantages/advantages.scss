@@ -1,0 +1,129 @@
+.advantages {
+  padding-top: 120px;
+  padding-bottom: 60px;
+  background-color: $blue;
+
+  @include mobile-max {
+    padding-top: 70px;
+  }
+}
+
+.advantages__title {
+  margin-bottom: 45px;
+
+  @include mobile-max {
+    margin-bottom: 10px;
+  }
+}
+
+.advantages__container {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 65px;
+  z-index: 0;
+}
+
+.advantages__slider-navigation {
+  position: absolute;
+  right: 15px;
+  top: 0;
+  z-index: 5;
+}
+
+.advantages__navigation-btn-prev {
+  margin-right: 5px;
+}
+
+.advantages__pagination {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  left: 50% !important;
+  transform: translateX(-50%);
+  width: auto !important;
+  height: 20px;
+  z-index: 5;
+}
+
+.advantages__item {
+  display: flex;
+  min-height: 240px;
+  padding: 47px;
+  background-color: $gray;
+
+  @include mobile-max {
+    min-height: 180px;
+    padding: 35px;
+  }
+
+  @include mobile-medium-max {
+    flex-direction: column;
+    min-height: 250px;
+    padding: 35px;
+    align-items: center;
+  }
+}
+
+.advantages__item-img {
+  flex-shrink: 0;
+  margin: 0 45px;
+
+  @include tablet-medium-max {
+    width: 150px;
+    margin-left: 0;
+  }
+
+  @include mobile-max {
+    width: 100px;
+  }
+
+  @include mobile-medium-max {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.advantages__item-content {
+  color: $white;
+}
+
+.advantages__item-title {
+  @include cadillac(36, 36, 600);
+  text-transform: uppercase;
+
+  margin-bottom: 20px;
+
+  @include tablet-max {
+    @include cadillac(30, 30, 600);
+  }
+
+  @include mobile-max {
+    @include cadillac(22, 25, 600);
+  }
+
+  @include mobile-medium-max {
+    @include cadillac(18, 22, 600);
+    text-align: center;
+  }
+}
+
+.advantages__item-description {
+  @include cadillac-b(30, 40);
+  text-transform: uppercase;
+
+  @include tablet-max {
+    @include cadillac-b(24, 32);
+  }
+
+  @include tablet-medium-max {
+    @include cadillac-b(20, 28);
+  }
+
+  @include mobile-max {
+    @include cadillac-b(16, 22);
+  }
+
+  @include mobile-medium-max {
+    text-align: center;
+  }
+}

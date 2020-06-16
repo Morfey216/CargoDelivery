@@ -4,54 +4,48 @@ include ../title/title
   const deliveryList = [
       {
         img: 'airplane.png',
-        w: '61',
+        w: '63',
         h: '61',
-        content: 'Авиадоставка грузов',
+        content: 'Авиадоставки грузов',
       },
       {
         img: 'car.png',
-        w: '49',
-        h: '39',
-        content: 'Автодоставка грузов',
+        w: '66',
+        h: '68',
+        content: 'Автомобильные грузоперевозки',
       },
       {
         img: 'train.png',
-        w: '53',
-        h: '54',
-        content: 'ЖД доставка грузов',
+        w: '62',
+        h: '64',
+        content: 'Железнодорожные грузоперевозки',
       },
       {
         img: 'ship.png',
-        w: '60',
-        h: '52',
-        content: 'Доставка морем',
-      },
-      {
-        img: 'cargo.png',
-        w: '58',
-        h: '56',
-        content: 'Контейнерные перевозки',
+        w: '65',
+        h: '62',
+        content: 'Морские грузоперевозки',
       },
       {
         img: 'containers.png',
-        w: '50',
-        h: '45',
+        w: '65',
+        h: '63',
         content: 'Сборные грузы',
       },
       {
-        img: 'fast-delivery.png',
-        w: '72',
-        h: '73',
-        content: 'Экспресс доставка грузов',
+        img: 'quick.png',
+        w: '76',
+        h: '62',
+        content: 'Экспресс доставка',
       },
     ]
 
 section.delivery#delivery
-  +title('Варианты доставки', 'section-nodecor').delivery__title
-  ul.delivery__list.container
-    each delivery in deliveryList
-      li.delivery__item
-        div.delivery__img
-          img(src="img/icons/" + delivery.img width= delivery.w height= delivery.h alt="")
-        h3!= delivery.content
-
+  +title('Доставляем по всему миру', 'gray').delivery__title
+  div.container
+    ul.delivery__list
+      each delivery in deliveryList
+        li.delivery__item
+          div.delivery__img
+            img(src="img/delivery/" + delivery.img width= delivery.w height= delivery.h alt="")
+          h3.delivery__item-title!= delivery.content

@@ -1,110 +1,22 @@
 .title {
-  @include ubuntu(36, 40, 500);
-  color: $title-color;
+  @include cadillac(60, 60, 600);
+  color: $blue;
   text-transform: uppercase;
+  text-align: center;
 
   @include tablet-max {
-    @include ubuntu(24, 36, 500);
+    @include cadillac(42, 42, 600);
   }
 
   @include mobile-max {
-    @include ubuntu(18, 25, 500);
+    @include cadillac(26, 30, 600);
   }
 }
 
-.title--bold {
-  @include ubuntu(36, 40, 700);
-
-  @include tablet-max {
-    @include ubuntu(28, 36, 700);
-  }
-
-  @include mobile-max {
-    @include ubuntu(24, 25, 700);
-  }
-}
-
-.title--white,
-.title--white-decor {
-  margin-bottom: 32px;
-  padding-top: 23px;
+.title--white {
   color: $white;
-
-  @include mobile-max {
-    margin-bottom: 24px;
-  }
 }
 
-.title--white-decor {
-  position: relative;
-  padding-bottom: 17px;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-
-    width: 80px;
-    height: 2px;
-
-    background-color: $orange;
-  }
-}
-
-.title--section {
-  position: relative;
-  text-align: center;
-  margin-bottom: 32px;
-  padding-top: 23px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: 80px;
-    height: 2px;
-
-    background-color: $border-gray;
-  }
-
-  @include mobile-max {
-    margin-bottom: 24px;
-  }
-}
-
-.title--left-decor {
-  position: relative;
-  padding-left: 11px;
-  text-transform: none;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 6px;
-    left: 0;
-
-    width: 6px;
-    height: 29px;
-
-    background-color: $green;
-
-    @include tablet-max {
-      height: 24px;
-    }
-  }
-}
-
-.title--section-nodecor {
-  position: relative;
-  text-align: center;
-  margin-bottom: 32px;
-  padding-top: 23px;
-
-  @include mobile-max {
-    margin-bottom: 24px;
-  }
+.title--gray {
+  color: $gray;
 }

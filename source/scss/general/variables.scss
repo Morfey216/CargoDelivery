@@ -11,7 +11,7 @@ $screen-xxl: 1799px;
 
 // region colors
 $dark-gray: #181715; // Основной цвет текста / заголовков.
-$gray: #373737; // Цвет фона некоторых блоков / топ-футера.
+$gray: #666666; // Цвет фона некоторых блоков / топ-футера.
 $header-gray: #969696; // Цвет фона некоторых блоков / топ-футера.
 $medium-gray: #4c4c4c; // Цвет фона некоторых блоков / низ футера.
 $light-gray: #787878; // Цвет фона некоторых блоков / низ футера.
@@ -20,42 +20,27 @@ $very-light-gray: #8f8f8f; // Цвет светлого текста
 $icon-gray: #c2c2c2; // Цвет фона иконок
 $popap-gray: #ededed; // Цвет фона "выпадашек"
 $border-gray: #d7d7d7; // Цвет границ
-$icon-bg-gray: #b9b9b9; // Цвет фона иконок в футере
-$breadcrumbs-gray: #a8a8a8; // Цвет хлебных крошек
-$gray-disabled: #c5c5c5;
 
-$orange: #ffbb42; // Цвет кнопок и некоторого текста.
-$orange-date: #ffbb42; // Цвет текста даты.
-$orange-hover: #e08f02;
-$orange-active: #c57d00;
-$orange-name: #f6772c;
-$yellow: #e9c65a;
-// $orange-btn: #fddba1; // Цвет кнопок.
 
-$green: #64892e; // Цвет кнопок и некоторых ссылок.
-$green-btn: #99d640; // Цвет кнопок и некоторых ссылок.
-$green-hover: #4b691d;
-$green-active: #3f6606;
-
-$blue: #709dca; //цвет фона, иконок
+$dark-blue: #1bb0ca; //цвет фона, иконок, текста
+$blue: #58c5d9; //цвет фона, иконок, текста
+$blue-active: #99f0ff; //цвет фона, иконок, текста
 $light-blue: #e7edf3; //цвет светлого фона
 
 $title-color: #394b50;
 $text-color: #7b7b7b;
 
-$red: #ff0029;
 $white: #ffffff; // Цвет текста на цветном фоне.
 $black: #000000;
 $black-title: #0b0000; //Цвет заголовка
 
-$brown: #8b806b;
-$light-brown: #8f8470;
 
 // $bg-gradient-gray: linear-gradient(0deg, rgba(216, 216, 216, 0.2) -5.21%, rgba(216, 216, 216, 0) 88.31%);
 // endregion
 
 // region fonts
-$ubuntu: "Ubuntu", "Arial", sans-serif;
+$cadillac: "Cadillac Sans A", "Arial", sans-serif;
+$cadillac-b: "Cadillac Sans A Book", "Arial", sans-serif;
 // endregion
 
 // region retina

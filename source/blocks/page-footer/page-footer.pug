@@ -1,10 +1,9 @@
 include ../menu-nav/menu-nav
-include ../contacts-phone/contacts-phone
 
 -
   const footerNavList = [
       {
-        item: 'Оффер',
+        item: 'Главная',
         anchor: 'offer',
       },
       {
@@ -12,20 +11,16 @@ include ../contacts-phone/contacts-phone
         anchor: 'services',
       },
       {
-        item: 'Гарантии',
-        anchor: 'warranty',
+        item: 'Преимущества',
+        anchor: 'advantages',
       },
       {
         item: 'Доставка',
         anchor: 'delivery',
       },
       {
-        item: 'Отзывы',
-        anchor: 'reviews',
-      },
-      {
-        item: 'Вопросы',
-        anchor: 'faq',
+        item: 'Расчет стоимости',
+        anchor: 'calculation',
       },
       {
         item: 'Контакты',
@@ -33,27 +28,55 @@ include ../contacts-phone/contacts-phone
       },
     ]
 
+-
+  const socialList = [
+      {
+        item: 'Facebook',
+        icon: 'facebook.png',
+        w: '27',
+        h: '27',
+        link: 'https://www.facebook.com/Svnimportcom-104017764688816',
+        desc: 'Следите за новостями в Facebook',
+      },
+      {
+        item: 'Instagram',
+        icon: 'insta.png',
+        w: '27',
+        h: '27',
+        link: 'https://www.instagram.com/svnimport/',
+        desc: 'Следите за новостями в Instagram',
+      },
+      {
+        item: 'Вконтакте',
+        icon: 'vk.png',
+        w: '45',
+        h: '27',
+        link: 'https://vk.com/svnimport',
+        desc: 'Следите за новостями во Вконтакте',
+      },
+      {
+        item: 'YouTube',
+        icon: 'youtube.png',
+        w: '39',
+        h: '27',
+        link: 'https://www.youtube.com/channel/UCH0y-syRlKW_XS19-b5sayA/featured',
+        desc: 'Подписывайтесь на наш YouTube-канал',
+      },
+    ]
+
 mixin page-footer(mod)
   footer.page-footer
     div.page-footer__top
       +menu-nav(footerNavList, 'Дополнительное меню').page-footer__nav
-      +contacts-phone('phone-icon.png', 13, 14).footer__contacts-phone
       div.page-footer__social
         h2.visually-hidden Мы в соцсетях
         ul.page-footer__social-list
-          li.page-footer__social-item
-            a(href="#").page-footer__social-link
-              img(src="img/icons/vk-yellow.png" width="26" height="16" alt="Логотип Вконтакте").page-footer__icon
-              span.visually-hidden Следите за новостями во Вконтакте
-          li.page-footer__social-item
-            a(href="#").page-footer__social-link
-              img(src="img/icons/youtube-yellow.png" width="26" height="18" alt="Логотип YouTube").page-footer__icon
-              span.visually-hidden Подписывайтесь на наш YouTube-канал
-          li.page-footer__social-item
-            a(href="#").page-footer__social-link
-              img(src="img/icons/facebook-yellow.png" width="19" height="19" alt="Логотип Facebook").page-footer__icon
-              span.visually-hidden Следите за новостями в Facebook
-
+          each social in socialList
+            li.page-footer__social-item
+              a(href= social.link target="_blank").page-footer__social-link
+                img(src="img/social/" + social.icon width= social.w height= social.h alt= social.item).page-footer__icon
+                span.visually-hidden #{social.desc}
     div.page-footer__bottom
       div.page-footer__wrapper
-        p.page-footer__copyright All contents © copyright 2020
+        p.page-footer__details ООО "СВН импорт", УНП 193430086
+        p.page-footer__copyright All contents © Copyright 2020
