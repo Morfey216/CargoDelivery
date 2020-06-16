@@ -68,6 +68,7 @@ gulp.task('copy', () => gulp.src([
   'source/img/**/*',
   '!source/img/sprite',
   '!source/img/sprite/*',
+  'source/mail/**/*',
 ], {
   base: 'source',
 })
@@ -79,6 +80,7 @@ gulp.task('copy-build', () => gulp.src([
   'source/img/**/*',
   '!source/img/sprite',
   '!source/img/sprite/*',
+  'source/mail/**/*',
 ], {
   base: 'source',
 })
