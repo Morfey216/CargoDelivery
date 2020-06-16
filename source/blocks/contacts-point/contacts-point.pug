@@ -1,4 +1,4 @@
 mixin contacts-point(point, mod)
   div(class='contacts-point')&attributes(attributes)
     img(src = 'img/icons/point-icon.png', width='31', height='31', alt='', class= mod ? 'contacts-point__icon--' + mod : '').contacts-point__icon
-    p.contacts-point__point #{point}
+    p.contacts-point__point!= point

@@ -2,17 +2,12 @@
 import './general/polyfills';
 import './general/intersection-observer';
 // import utils from './general/utils';
-// import lazyload from './general/lazyload';
 /* eslint-enable */
 
 // region Blocks
 
 import formInput from '../blocks/form-input/form-input';
 import formTextarea from '../blocks/form-textarea/form-textarea';
-// import modal from '../blocks/modal/modal';
-// import gagerModal from '../blocks/gager-modal/gager-modal';
-// import callRequestModal from '../blocks/call-request-modal/call-request-modal';
-// import discountModal from '../blocks/discount-modal/discount-modal';
 import header from '../blocks/header/header';
 import advantages from '../blocks/advantages/advantages';
 
@@ -20,9 +15,5 @@ import advantages from '../blocks/advantages/advantages';
 
 formInput();
 formTextarea();
-// modal();
-// gagerModal();
-// discountModal();
-// callRequestModal();
 header();
 advantages();

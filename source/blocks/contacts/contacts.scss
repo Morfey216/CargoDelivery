@@ -50,6 +50,10 @@
     align-items: flex-start;
     background-color: $light-blue;
   }
+
+  @include mobile-medium-max {
+    padding: 25px 5px;
+  }
 }
 
 .contacts__company-logo {

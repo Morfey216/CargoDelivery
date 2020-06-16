@@ -76,6 +76,10 @@
   &:not(:last-child) {
     margin-right: 26px;
     // border-right: 1px solid $border-gray;
+
+    @include mobile-medium-max {
+      margin-right: 10px;
+    }
   }
 }
 
@@ -107,7 +111,7 @@
 .page-footer__wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: flex-start;
   margin: 0 auto;
   padding: 15px 15px 15px;
@@ -123,6 +127,7 @@
   }
 }
 
+.page-footer__details,
 .page-footer__copyright {
   @include cadillac(13, 18, 300);
   color: $white;

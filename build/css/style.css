@@ -2421,6 +2421,9 @@ button.swiper-pagination-bullet {
           -ms-flex-align: start;
               align-items: flex-start;
       background-color: #e7edf3; } }
+  @media (max-width: 579px) {
+    .contacts__company {
+      padding: 25px 5px; } }
 
 .contacts__company-logo {
   margin: 0 auto;
@@ -2558,6 +2561,9 @@ button.swiper-pagination-bullet {
   padding: 3px 9px; }
   .page-footer__social-item:not(:last-child) {
     margin-right: 26px; }
+    @media (max-width: 579px) {
+      .page-footer__social-item:not(:last-child) {
+        margin-right: 10px; } }
 
 .page-footer__social-link {
   margin: 0;
@@ -2584,9 +2590,8 @@ button.swiper-pagination-bullet {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -2601,6 +2606,7 @@ button.swiper-pagination-bullet {
     .page-footer__wrapper {
       padding: 16px 18px 16px; } }
 
+.page-footer__details,
 .page-footer__copyright {
   font-family: "Cadillac Sans A", "Arial", sans-serif;
   font-size: 13px;
