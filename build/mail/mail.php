@@ -6,6 +6,19 @@ $mail->CharSet = 'utf-8';
 
 $name = $_POST['name'];
 $phone = $_POST['phone'];
+$email = $_POST['email'];
+$country = $_POST['country'];
+$city = $_POST['city'];
+$sendingPoint = $_POST['sending-point'];
+$description = $_POST['description'];
+
+if ( !empty( $_FILES['uploaded-file']['tmp_name'] ) and $_FILES['uploaded-file']['error'] == 0 ) {
+  $filepath = $_FILES['uploaded-file']['tmp_name'];
+  $filename = $_FILES['uploaded-file']['name'];
+} else {
+  $filepath = '';
+  $filename = '';
+}
 
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
@@ -17,25 +30,21 @@ $mail->Password = 'gjxnflkzjnghfdrb'; // Ваш пароль от почты с 
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465; // TCP port to connect to / этот порт может отличаться у других провайдеров
 
-$mail->setFrom('no-replay@svnimport.com'); // от кого будет уходить письмо?
-$mail->addAddress('info@svnimport.com');     // Кому будет уходить письмо
-//$mail->addAddress('ellen@example.com');               // Name is optional
-//$mail->addReplyTo('info@example.com', 'Information');
-//$mail->addCC('cc@example.com');
-//$mail->addBCC('bcc@example.com');
-//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-$mail->addAttachment($_FILES['upload']['tmp_name'], $_FILES['upload']['name']);    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
+$mail->setFrom('no-replay@svnimport.com'); // от кого будет уходить письмо?
+$mail->addAddress('s.streha@yandex.by');     // Кому будет уходить письмо
+$mail->addAddress('info@svnimport.com');     // Кому будет уходить письмо
+
+$mail->addAttachment($filepath, $filename);    // Optional name
 
 $mail->Subject = 'Заявка с тестового сайта';
-$mail->Body    = '' .$name . ' оставил заявку, его телефон ' .$phone. '<br>Почта этого пользователя: ' .$email;
+$mail->Body    = '' .$name . ' оставил заявку; Телефон ' .$phone. '<br>Почта: ' .$email. '<br>Страна: ' .$country. '<br>Город: ' .$city. '<br>Из какой страны товар: ' .$sendingPoint. '<br>Описание: ' .$description;
 $mail->AltBody = '';
 
 if(!$mail->send()) {
-    echo 'Error';
+    echo 'Данные отправить не удалось. Попробуйте позже!';
 } else {
-    header('location: thank-you.html');
+    // header('location: thank-you.html');
+    echo 'Данные отправлены!';
 }
 ?>
-
-

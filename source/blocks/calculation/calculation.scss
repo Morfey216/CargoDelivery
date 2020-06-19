@@ -55,10 +55,28 @@
   }
 }
 
+.calculation__file-input {
+  cursor: pointer;
+}
+
 .calculation__form-textarea {
   margin-bottom: 75px;
 
   @include mobile-max {
     margin-bottom: 40px;
+  }
+}
+
+.calculation__upload-message {
+  @include cadillac-b(14, 14);
+  width: 100%;
+  padding: 15px;
+  color: $white;
+  text-align: center;
+}
+
+.calculation__file-input.uploaded {
+  span {
+    text-transform: none;
   }
 }
